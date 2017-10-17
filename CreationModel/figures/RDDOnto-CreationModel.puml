@@ -1,6 +1,8 @@
+@startuml
 digraph foo {
   node [shape=box]
   rankdir=LR
   "Work" -> "Manifestation" -> "Instance" -> "Copy"
   "Work" -> "Adaptation" -> "Manifestation"
 }
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+digraph foo {
+  node [shape=box]; ranksep=0.3; nodesep=0.1
+  rankdir=LR
+  "Expression" -> "Manifestation" [label="fixed in"]
+  "Manifestation" -> "Abstraction" [label="abstracted to"]
+  "Abstraction" -> "Expression" [label="expressed in"]
+  "Expression" -> "Abstraction" [label="abstracted to"]
+  "Abstraction" -> "Manifestation" [label="fixed in"]
+}
+@enduml
