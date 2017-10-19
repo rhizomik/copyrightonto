@@ -1,5 +1,5 @@
 @startuml
-digraph foo {
+digraph OntologyX_CreationModel {
   node [shape=box]; ranksep=0.3; nodesep=0.1
   rankdir=LR
   "Expression" -> "Manifestation" [label="fixed in"]

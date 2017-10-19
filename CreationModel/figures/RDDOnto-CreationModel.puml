@@ -1,5 +1,5 @@
 @startuml
-digraph foo {
+digraph RDDOnto_CreationModel {
   node [shape=box]
   rankdir=LR
   "Work" -> "Manifestation" -> "Instance" -> "Copy"
