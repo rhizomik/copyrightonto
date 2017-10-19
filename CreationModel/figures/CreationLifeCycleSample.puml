@@ -1,0 +1,7 @@
+@startuml
+digraph CreationLifeCycleSample {
+  node [shape=box]
+  rankdir=LR
+  "literary work" -> "serial" -> "script" -> "performance" -> "motion picture" -> "broadcast"
+}
+@enduml
