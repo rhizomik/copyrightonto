@@ -1,6 +1,20 @@
 Creation Model
 ==============
 
+**Table of Contents**
+
+- [Motivation](#motivation)
+- [Related Work](#related-work)
+  + [IFLA's FRBR Creation Model](#ifla-s-frbr-creation-model)
+  + [LCC's RRM Creation Model](#lcc-s-rrm-creation-model)
+  + [MPEG-21 Media Value Chain Ontology](#mpeg-21-media-value-chain-ontology)
+- [Copyright Ontology Creation Model](#copyright-ontology-creation-model)
+  + [Implementation](#implementation)
+- [The Rest of the Copyright Ontology](#the-rest-of-the-copyright-ontology)
+- [References](#references)
+
+## Motivation
+
 The objective of this part of the Copyright Ontology is to model the different forms that a creation, the subject matter of copyright, can take along its life cycle.
 
 The resulting model should be capable of modelling complex lifecycles like the one presented in Table 1.
@@ -11,15 +25,19 @@ Table 1. Creation lifecycle sample: broadcast of a serial adapted from a literar
 > The resulting adaptation to a serial is realised as a **script** that is **performed** by some actors, including Gerard Depardieu, and recorded into a **motion picture**. 
 > This motion picture is finally **broadcasted** to users who can tune the resulting communication.
 
-The previous lifecycle sample scenario is summarised in Figure 1.
+An overview of the sample lifecycle in Table 1 is shown in Figure 1.
 
 | ![CreationLifecycleSample](http://www.plantuml.com/plantuml/svg/FScn4S8m3030LM01gq-R5YecS1J5rY5RFbawBanFAjh_EtUKs2bCRjLzp0N0yYSLzXfRJ3BKxjGzeJQmobzj_0RKSHgNwbSgj3oT35QZxApzgJi975p2QFxrmGUj9mgzSXj2QKIJ7m00) |
 | :--------------------------------------: |
 | Figure 1. Overview of the creation lifecycle sample in Table 1 |
 
+## Related Work
+
+This section outlines existing attempts to model creation highlighting their limitations when trying to model complex scenarios like the one presented in Table 1.
+
 ### IFLA's FRBR Creation Model
 
-The most used creation model is the one proposed by the International Federation of Library Associations and Institutions (IFLA) called FRBR, Functional Requirements for Bibliographic Records (IFLA Study Group on FRBR, 2013). This standard proposed a set of entities to model creations, which are shown in Figure 2 and detailed next: 
+The most referenced creation model is the one proposed by the International Federation of Library Associations and Institutions (IFLA) called FRBR, Functional Requirements for Bibliographic Records [(IFLA Study Group on FRBR, 2013)](#references). This standard proposed a set of entities to model creations, which are shown in Figure 2 and detailed next: 
 
 - **Work**: a distinct intellectual or artistic creation. A work is an abstract entity; there is no single material object one can point to as the work. We recognize the work through individual realizations or expressions of the work, but the work itself exists only in the commonality of content between and among the various expressions of the work.
 - **Expression**: the intellectual or artistic realization of a Work in the form of alpha-numeric, musical, or choreographic notation, sound, image, object, movement, etc., or any combination of such forms.
@@ -30,122 +48,124 @@ The most used creation model is the one proposed by the International Federation
 | :--------------------------------------: |
 |      Figure 2. FRBR Creation Model       |
 
-The literary work in Table 1 can be modelled using FRBR Work. Its adaptation to a serial is another Work, though there is no way in FRBR to represent a work as adaptation of another one. 
+The **literary work** introduced in Table 1 can be modelled using *FRBR Work*. Its adaptation to a **serial** is another *FRBR Work*, though there is no way in FRBR to represent a work as an adaptation of another one. 
 
-Then, the script corresponds to an FRBR Expression. However, the performance of the script by the actors is not a FRBR Manifestation because it is not a physical embodiment. In any case, it might be represented as another FRBR Expression though it is no mechanism in FRBR to relate two expressions. Consequently, there is no distinction between scripts and their performances and it is not possible to model that a particular performance depends on a particular script.
+Then, the **script** corresponds to an *FRBR Expression*. However, the **performance** of the script by the actors is not a *FRBR Manifestation* because it is not a physical embodiment. In any case, it might be represented as another *FRBR Expression* though it is no mechanism in FRBR to relate two expressions. Consequently, there is no distinction between scripts and their performances and it is not possible to model that a particular performance depends on a particular script.
 
-The performance recording into a motion picture can be modelled using FRBR Manifestation though its broadcast is not an FRBR Item. In any case, someone recording the broadcast might produce an FRBR Item.
+The performance recording into a **motion picture** can be modelled using *FRBR Manifestation* though its **broadcast** is not an *FRBR Item*. In any case, someone recording the broadcast might produce an *FRBR Item*.
 
-Consequently, FRBR is not suitable to model complex value chains like the one in Table 1. The problem is that complex value chains seem to be the tendency as new ways to generate and distribute content proliferate. It is understandable that FRBR does not make these detailed distinctions as it was originally intended as a conceptual model for bibliographic records. However, most of the available creation models are based on the FRBR model and inherit this limitations.
+Consequently, FRBR is not suitable to model complex value chains like the one in Table 1. The problem is that complex value chains seem to be the tendency as new ways to generate and distribute content proliferate. It is understandable that FRBR does not make these detailed distinctions as it was originally intended as a conceptual model for bibliographic records. However, most of the available creation models are based on the FRBR model and inherit these limitations, as detailed in the next subsections.
 
 ### LCC's RRM Creation Model
 
-Linked Content Coalition (LCC) Rights Reference Model (RRM) defines the concept Creation that is then particularised into:
+Another relevant proposal, associated with current initiatives like the Copyright Hub or the Rights Data Integration project, is the Linked Content Coalition (LCC) Rights Reference Model (RRM) [(Rust, 2013)](#references). It defines the concept **Creation** that is then particularised into:
 
 * **Work**: A Creation which is a distinct, abstract Creation of the mind whose existence is revealed through one or more Manifestations.
 * **Manifestation**: A perceivable Creation.
 
-Moreover, LCC's RRM defines a link between two creations that indicates that one is an **adaptation** of the other.
+Moreover, LCC's RRM defines a link between two creations that indicates that one is an **adaptation** of the other. 
 
-### RDD Ontology
+Consequently, it is possible to model the **literary work** and its **serial** adaptation as *LCC Works*. Then, *LCC Manifestation* can model the **script**. However, no further concepts are provided to get into deeper detail when modelling the rest of the creation value chain. The only possibility is to model all (**performance**, **motion picture** and **broadcast**) as *LCC Manifestation* and thus no distinctions can be made.
 
-A more complete formalisation is the RRD ontology for the expression of
-intellectual property entities and relations \[[^17]\]. It is not based
-on copyright law but on a partial conceptualisation of the creation
-model, i.e. the different forms a creation can take along the value
-chain. However, this model is not sufficiently detailed as it just
-considers Works, Adaptations, Manifestations, Instances and Copies, as
-it is shown in Figure 1. There is no distinction between manifestations
-as objects or as events, e.g. a script or a performance, neither between
-instances as objects or as events, e.g. a recording or a broadcast.
+### MPEG-21 Media Value Chain Ontology
 
-| ![RRD Ontology Creation Model](http://www.plantuml.com/plantuml/svg/LSen3iCW3030hwGF2Dwx9cjKgJ-Wn0KhW96n5JMl3sldkmVLa6r7apmbrTQV0E9F5qcJVQoZ1AwALLtW0fBeua8716u_ePXq84FnNL5W4VHAN3VUCSENeWbsUA_hQwJvJrspacy0) |
+A more detailed formalisation is the one provided by the ISO/IEC standard MPEG-21. One of the parts of this standard, concretely part 19, focuses on modelling media value chains using an ontology, the MPEG-21 Media Value Chain Ontology (MVCO) [(Delgado & Rodriguez-Doncel, 2009)](#references). 
+
+The ontology formalises the following concepts, also shown in Figure 3: 
+
+- **Work**: A creation that retains intellectual or artistic attributes independently of its Manifestations.
+- **Adaptation**: A Work that is derived from another Work.
+- **Manifestation**: An object or event which is an expression of a Work
+- **Instance**: An object or event which is an example of an Identified Manifestation (e.g. a File)
+- **Copy**: A mechanical reproduction of analogue or digital representations of a given IP Entity. In the case of digital Copies, the result is virtually identical while in the case of analogue Copies the results can vary considerably in quality.
+
+| ![MVCO Ontology Creation Model](http://www.plantuml.com/plantuml/svg/LSan3iCW3030hoGF2DwpPaRTibDmm2fWP6nLxUlJjRVUIZrMIsXIbw8wvWuWuUqoQR6dJPJ8NR6hYzn02dsvqGiYZuzGBlfBXXQcei0X69IuUqvOuQ9iWXFyUJosltB3Mhq1) |
 | :--------------------------------------: |
-|  Figure 3. RRD Ontology Creation Model   |
+|  Figure 3. MVCO Ontology Creation Model  |
 
-### OntologyX Creation Model
+Though the model is more detailed than the previous ones, its expressivity is also limited in the sense that it makes no distinction between manifestations as objects, like a **script**, and as events, like a **performance**. The same happens with instances as objects or as events, so there is no way to distinguish between a **motion picture** and its **broadcast**.
 
-An alternative to the FRBR creation model is the OntologyX \[[^19]\]
-ontology. As it is shown in Figure 2, it does distinguish between
-creations as objects, called Manifestations, and as things in time,
-called Expressions. However, it does not further detail the different
-forms a creation can adopt along the value chain when as object or as
-event. Moreover, OntologyX concentrates on the kind of actions that can
-be performed on governed content and it does not take into account the
-underlying legal framework.
+## Copyright Ontology Creation Model
 
-| ![OntologyX Creation Model](http://www.plantuml.com/plantuml/svg/LSen3eCm3030hvG7DDwxCgEkh6amYLKdZXnRYBw-hCnt4xN4lg4hFufP7oy0ZKV8PCK_Fb2JDCDc8Ka5BVIJIbz8qa-bNEn2WHg7eSAi68saBR8XmqxP5GUyhy6Ip_Lvyz2zyXy0) |
-| :--------------------------------------: |
-|  Figure 4. The OntologyX Creation Model  |
-
-## Proposed Creation Model
-
-The Creation Model conceptualises the different forms a creation can take, which are first classified based on the common distinctions made by general ontologies like SUMO [(Niles & Pease, 2001)](#References) or LKIF [(Hoekstra, Breuker, Bello, & Boer, 2007)](#References) or schema.org ():
+The Creation Model proposed by the Copyright Ontology aims to overcome the limitations highlighted in the previous subsections. To do so, the starting point is to take into account how general or upper ontologies conceptualise the world around us, which certainly limits the different forms creations can take. Most general ontologies, like SUMO [(Niles & Pease, 2001)](#references) or schema.org [(Guha & Brickley, 2016)](#references), agree on the following basic distinctions about what is there in the world:
 
 - **Abstract**: something that cannot exist at a particular place and time without some physical encoding or embodiment.
-  - Examples: *schema:Intangible*, ...
+  - Examples: SUMO's *Abstract* or schema.org's *Intangible*.
 
 - **Object**: corresponds to the class of ordinary objects and includes digital objects.
 
-  - Examples: *schema:Person*, *schema:Place*, *schema:CreativeWork*, ...
+  - Examples: SUMO's *Object* or the combination of schema.org's *Person*, *Organization*, *Place* and *CreativeWork*.
 
 - **Process**: something that happens and has temporal parts or stages.
 
-  - Examples: *schema:Action*, *schema:Event*, ...
+  - Examples: SUMO's *Process* or the combination of schema.org's *Action* and *Event*.
 
 
+To facilitate the adoption of the Copyright Ontology, it is rooted on the most used general ontology in the Web: schema.org. This is a generic vocabulary founded by Google, Microsoft, Yahoo and Yandex. All the proposed concepts for the Creation Model are subconcepts of the corresponding generic ones in schema.org:
 
-In order to facilitate the adoption of the Copyright Ontology, it is rooted on the most used general ontology, schema.org. Consequently, all the proposed concepts for the Creation Model are subconcepts of the corresponding generic ones in schema.org:
 
-
-- ***schema:Intangile***
+- *schema:Intangible*
   - **Work**: is a distinct intellectual or artistic creation. It includes literary and artistic works, music, pictures and motion pictures, but also computer programs or compilations, like databases.
-- ***schema:CreativeWork***: corresponds to the class of ordinary objects and includes digital objects.
+- *schema:CreativeWork*
 
     -   **Manifestation**: the materialisation of a work in a concrete medium, a tangible or digital object.
-
-    -   **Fixation**: the materialisation of a performance in a concrete medium, a tangible or digital object.
-
-    -   **Instance**: the reproduction, copy, of a manifestation, a fixation or another instance.
-- ***schema:Event***: something that happens and has temporal parts or stages.
+    -   **Recording**: the materialisation of a performance in a concrete medium, a tangible or digital object.
+        -   Includes **Sound Recording** and **Audiovisual Recording**.
+    -   **Instance**: the reproduction, copy, of a manifestation, a recording or another instance.
+- *schema:Event*
 
     -   **Performance**: the expression in time of a work. Performers or technical methods might be involved in the process.
+        -   **Improvisation**: the expression in time of a work that has not been previously materialised in a manifestation.
+    -   **Communication**: the transmission of a work among places at a given time. It is a process performed when the public is not present at the place and or time where the communication originates. It includes broadcasts, i.e. one to many, but also communications from a place and at a time individually chosen, like Internet streaming.
+        -   Live **Communication**: the direct communication of a performance without a mediating non-ephemeral recording.
 
-    -   **Communication**: the transmission of a work among places at a given time. It is a process performed when the public is not present at the place and or time where the communication originates. It includes broadcasts, i.e. one to many, but also communications from a place and at a time individually chosen.
+The previous concepts are the building blocks of the Copyright Ontology Creation Model. However, in order to capture creation value chains, the model should also include how these different creation forms relate.
 
-There are many relations among the different forms a creation can take
-during its life cycle, see Figure 3, as it evolves from an abstract
-idea, i.e. a *Work*, towards something that can be consumed by end
-users, e.g. an *Instance*, a *Communication* or a *Performance*. Despite
-*Fixations* or *Manifestations* might also be consumed, e.g. a painting.
-This creation model constitutes a superset of the ones commented in the
-Related Work Section and consequently existing conceptualisations based
-on them might be mapped to the Copyright Ontology creation model.
+Figure 4 presents these relationships that capture the flux from **Work**, towards something that can be consumed by end users, e.g. an **Instance**, a **Communication** or a **Performance**. Despite **Recordings** or **Manifestations** might also be consumed, e.g. a painting.
 
-|                                          |
+| ![RRD Ontology Creation Model](http://www.plantuml.com/plantuml/svg/LSen3i8m3030hy03Y7VMpgW3BmYfIQpQSUJOGl1wkZ0mtvsf5uuDm_ZKtCUy0bX-fKhUuX4JhMXtx9wA2bYZZmhjK7IyZMhp0nKaJqU3nJ0xQR_fXWnFgc4uOVdLzQYNltCd6OnfXF0N) |
 | :--------------------------------------: |
-| Figure 5. Copyright Ontology Creation Model |
+| Figure 4. Copyright Ontology Creation Model (simplified version) |
+
+This creation model constitutes a superset of the previously introduced ones and thus existing conceptualisations based on them can be mapped to the Copyright Ontology Creation Model. With this model, it is possible to fully model the value chain scenario presented in Table 1, as shown in Figure 5.
+
+| ![CreationLifecycleSample](http://www.plantuml.com/plantuml/svg/DSen3i8m3030hy03Y7SMXgmW1buGKZUnSEB8iONAw-dI-UvCFRClwCgdQZRc5K3JDnIowc-Vg5cwORUGfO5M-acZ3sGPcrAfjgD0IzDG8Iec8-aFMP1XfUAA4-9Hdtkz7ETEAyOjCxvI6unXUEFR7m00) |
+| :--------------------------------------: |
+| Figure 5. Overview of the creation lifecycle sample in Table 1 |
+
+In case of requiring an even greater level of detail, the whole set of Creation Model concepts can be taken into consideration when defining the relationships among them, thus including **Improvisation** and **Live Communication**, as shown in Figure 6.
+
+| ![RRD Ontology Creation Model](http://www.plantuml.com/plantuml/svg/LSen3i8m3030hz074EzTAx5Ll25DJMBLYIF75eBNjmi3yzr4BR7lwCgtOjR73A3n7J9PySq7Qf9cs2magQ25lbBfW2JzevIBNIXGup1KM1IZaRHLTcHuKNR50SklFgzw_piFPmxTAvy0) |
+| :--------------------------------------: |
+| Figure 6. Copyright Ontology Creation Model (full version) |
+
+### Implementation
+
+The Creation Model part of the Copyright Ontology is implemented using the Resource Description Format (**RDF**) and the Web Ontology Language (**OWL**) and is available in **Turtle** format:
+
+- Copyright Ontology Creation Model: [**copyrightonto-creationmodel.ttl**](copyrightonto-creationmodel.ttl)
+
+The ontology can be downloaded from the previous link and converted to other RDF/OWL formats using services like Anything To Triples ([Any23](http://any23.org/)), for instance as [**RDF/XML**](http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl)
+
+It is also possible get an overview of the ontology using visualisation services:
+
+- Copyright Ontology Creation Model [**overview**](http://visualdataweb.de/webvowl/#iri=http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) generated using [WebVOWL](http://vowl.visualdataweb.org/webvowl/).
+
+## The Rest of the Copyright Ontology
+
+This part of the Copyright Ontology focuses just on the different forms that creations can take along their lifecycle. The transitions among them are governed by different rights in Copyright, as detailed in the [**Rights Model**](../RightsModel) part of the Copyright Ontology. These rights govern the actions that participants in creation value chains can perform, which are detailed in the [**Actions Model**](../ActionsModel) part of the Copyright Ontology.
 
 References
 ----------
 
+Delgado, J., & Rodriguez-Doncel, V. (2009). A Media Value Chain Ontology for MPEG-21. *IEEE MultiMedia*, *16*(4), 44–51. https://doi.org/10.1109/MMUL.2009.78
+
 Guha, R. V., Brickley, D., & Macbeth, S. (2016). Schema.org: Evolution of Structured Data on the Web. *Communications of the ACM*, *59*(2), 44–51. https://doi.org/10.1145/2844544
 
-Niles, I., & Pease, A. (2001). Towards a standard upper ontology. 
-In C. Welty & B. Smith (Eds.), *FOIS ’01: Proceedings of the international conference on Formal Ontology in Information Systems* (pp. 2-9). New York, NY, USA: ACM Press.
-
-Hoekstra, R., Breuker, J., Bello, M. D., & Boer, A. (2007). The LKIF Core Ontology of Basic Legal Concepts. 
-In P. Casanovas, M. A. Biasiotti, E. Francesconi, & M. T. Sagri (Eds.), *Proceedings of the Workshop on Legal Ontologies and Artificial Intelligence Techniques (LOAIT 2007)*.
+Hoekstra, R., Breuker, J., Bello, M. D., & Boer, A. (2007). The LKIF Core Ontology of Basic Legal Concepts. In P. Casanovas, M. A. Biasiotti, E. Francesconi, & M. T. Sagri (Eds.), *Proceedings of the Workshop on Legal Ontologies and Artificial Intelligence Techniques (LOAIT 2007)*.
 
 IFLA Study Group on FRBR (Ed.). (2013). *Functional Requirements for Bibliographic Records, Final Report* (Reprint 2013). Berlin, Boston: De Gruyter Saur. https://doi.org/10.1515/9783110962451
 
+Rust, G. (2013). *The LCC Rights Reference Model v1.0*. Linked Content Coalition. Retrieved from http://doi.org/10.1000/284
 
-[^17]: Rodríguez, V., Gauvin, M., Delgado, J.: “An Ontology for the Expression of Intellectual Property Entities and Relations”. In M.I. Yagüe & E. Fernández-Medina (eds.) Security in Information Systems, Proceedings of the 5th International Workshop on Security in Information Systems, WOSIS 2007. Madeira, PT: INSTICC Press, 2007, pp. 196-203.
-
-[^19]: Pease, A., Rust, G.: “Formal Ontology for Media Rights Transactions”. In R. García (ed.) “Semantic Web for Business: Cases and Applications”. IGI Global, in press, 2008.
-
-[^26]: \[\] McGuinness, D.L., van Harmelen, F.: “OWL Web Ontology Language Overview”; W3C Recommendation 10 February 2004. http://www.w3.org/TR/owl-features
-
-
-
-
+Niles, I., & Pease, A. (2001). Towards a standard upper ontology. In C. Welty & B. Smith (Eds.), *FOIS ’01: Proceedings of the international conference on Formal Ontology in Information Systems* (pp. 2-9). New York, NY, USA: ACM Press.
