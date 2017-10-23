@@ -1,0 +1,30 @@
+@startuml
+digraph CopyrightOntoCreationModel {
+  node [shape=box]; rankdir=TB; compound=true; newrank=true;
+
+  "Work":n -> "Work":n [label="is derivation of"];
+  "Work":w -> "Manifestation":n [dir=back, label="is manifestation of"];
+  "Work":e -> "Performance":e [dir=back, style=invis];
+
+  subgraph cluster_MR {
+    "Manifestation";
+    "Recording";
+  }
+  subgraph cluster_PC {
+    "Performance";
+    "Communication";
+  }
+
+  "Manifestation" -> "Performance" [label="has performance", ltail=cluster_MR];
+
+  "Performance" -> "Communication" [label="has communication"];
+
+  "Recording" -> "Instance" [label="has instance", ltail=cluster_MR];
+  "Recording" -> "Communication" [label="has communication", ltail=cluster_MR];
+
+  "Communication":n -> "Recording" [label="has recording", ltail=cluster_PC];
+
+  {rank=same "Manifestation" "Performance"}
+  {rank=same "Recording" "Communication"}
+}
+@enduml
