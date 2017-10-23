@@ -1,0 +1,25 @@
+@startuml
+digraph CopyrightOnto_CreationLifeCycleSample {
+  node [shape=box]; compound=true; newrank=true;
+
+  subgraph cluster_left { style=invis;
+    "Work:\nliterary work";
+    "Manifestation:\nscript";
+    "Recording:\nmotion picture";
+  }
+  subgraph cluster_right { style=invis;
+    "Work:\nserial";
+    "Performance:\nperformance";
+    "Communication:\nbroadcast";
+  }
+  {rank=same "Work:\nliterary work" "Work:\nserial"}
+  {rank=same "Manifestation:\nscript" "Performance:\nperformance"}
+  {rank=same "Recording:\nmotion picture" "Communication:\nbroadcast"}
+
+  "Work:\nliterary work" -> "Work:\nserial" [label="is derivation of", dir=back]
+  "Work:\nserial" -> "Manifestation:\nscript" [label="is manifestation of", dir=back]
+  "Manifestation:\nscript" -> "Performance:\nperformance" [label="has performance"]
+  "Performance:\nperformance" -> "Recording:\nmotion picture" [label="has recording"]
+  "Recording:\nmotion picture" -> "Communication:\nbroadcast" [label="has communication"]
+}
+@enduml
