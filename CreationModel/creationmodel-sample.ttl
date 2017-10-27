@@ -1,0 +1,27 @@
+@prefix : <http://rhizomik.net/ontologies/copyrightonto/creationmodel-sample.ttl#> .
+@prefix copyrightonto: <http://rhizomik.net/ontologies/copyrightonto#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+:literary_work
+  rdf:type copyrightonto:Work ;
+.
+:serial
+  rdf:type copyrightonto:Work ;
+  copyrightonto:isDerivationOf :literary_work ;
+.
+:script
+  rdf:type copyrightonto:Manifestation ;
+  copyrightonto:hasPerformance :performance ;
+  copyrightonto:isManifestationOf :serial ;
+.
+:performance
+  rdf:type copyrightonto:Performance ;
+  copyrightonto:hasRecording :motion_picture ;
+.
+:motion_picture
+  rdf:type copyrightonto:AudiovisualRecording ;
+  copyrightonto:hasCommunication :broadcast ;
+.
+:broadcast
+  rdf:type copyrightonto:Communication ;
+.

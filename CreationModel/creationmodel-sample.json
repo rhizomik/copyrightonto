@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "cro": "http://rhizomik.net/ontologies/copyrightonto#",
+    "sample": "http://rhizomik.net/ontologies/copyrightonto/creationmodel-sample.ttl#"
+  },
+  "@graph": [
+    {
+      "@id": "sample:literary_work",
+      "@type": "cro:Work"
+    },
+    {
+      "@id": "sample:serial",
+      "@type": "cro:Work",
+      "cro:isDerivationOf": {
+        "@id": "sample:literary_work"
+      }
+    },
+    {
+      "@id": "sample:script",
+      "@type": "cro:Manifestation",
+      "cro:isManifestationOf": {
+        "@id": "sample:serial"
+      },
+      "cro:hasPerformance": {
+        "@id": "sample:performance"
+      }
+    },
+    {
+      "@id": "sample:performance",
+      "@type": "cro:Performance",
+      "cro:hasRecording": {
+        "@id": "sample:motion_picture"
+      }
+    },
+    {
+      "@id": "sample:motion_picture",
+      "@type": "cro:AudiovisualRecording",
+      "cro:hasCommunication": {
+        "@id": "sample:broadcast"
+      }
+    },
+    {
+      "@id": "sample:broadcast",
+      "@type": "cro:Communication"
+    }
+  ]
+}

@@ -5,11 +5,12 @@ Creation Model
 
 - [Motivation](#motivation)
 - [Related Work](#related-work)
-  + [IFLA's FRBR Creation Model](#ifla-s-frbr-creation-model)
-  + [LCC's RRM Creation Model](#lcc-s-rrm-creation-model)
+  + [IFLA's FRBR Creation Model](#iflas-frbr-creation-model)
+  + [LCC's RRM Creation Model](#lccs-rrm-creation-model)
   + [MPEG-21 Media Value Chain Ontology](#mpeg-21-media-value-chain-ontology)
 - [Copyright Ontology Creation Model](#copyright-ontology-creation-model)
   + [Implementation](#implementation)
+    + [Modelling Sample](#modelling-sample)
 - [The Rest of the Copyright Ontology](#the-rest-of-the-copyright-ontology)
 - [References](#references)
 
@@ -141,15 +142,103 @@ In case of requiring an even greater level of detail, the whole set of Creation 
 
 ### Implementation
 
-The Creation Model part of the Copyright Ontology is implemented using the Resource Description Format (**RDF**) and the Web Ontology Language (**OWL**) and is available in **Turtle** format:
+The Creation Model part of the Copyright Ontology is implemented using the Resource Description Format ([**RDF**](https://www.w3.org/RDF/)) and the Web Ontology Language ([**OWL**](https://www.w3.org/OWL/)). It is available in [**Turtle**](https://www.w3.org/TR/turtle/) RDF serialization format:
 
 - Copyright Ontology Creation Model: [**copyrightonto-creationmodel.ttl**](copyrightonto-creationmodel.ttl)
 
-The ontology can be downloaded from the previous link and converted to other RDF/OWL formats using services like Anything To Triples ([Any23](http://any23.org/)), for instance as [**RDF/XML**](http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl)
+The ontology can be downloaded from the previous link and converted to other RDF/OWL formats using services like Anything To Triples ([Any23](http://any23.org/)), for instance to [**RDF/XML**](http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl)
 
 It is also possible get an overview of the ontology using visualisation services:
 
 - Copyright Ontology Creation Model [**overview**](http://visualdataweb.de/webvowl/#iri=http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) generated using [WebVOWL](http://vowl.visualdataweb.org/webvowl/).
+
+#### Modelling Sample
+
+The Creation Model part of the Copyright Ontology can be then used to model creation value chains like the one presented in Figure 5. 
+
+This is the serialisation of that model using [Turtle](https://www.w3.org/TR/turtle/):
+
+```turtle
+@prefix : <http://rhizomik.net/ontologies/copyrightonto/creationmodel-sample.ttl#> .
+@prefix copyrightonto: <http://rhizomik.net/ontologies/copyrightonto#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+:literary_work
+  rdf:type copyrightonto:Work ;
+.
+:serial
+  rdf:type copyrightonto:Work ;
+  copyrightonto:isDerivationOf :literary_work ;
+.
+:script
+  rdf:type copyrightonto:Manifestation ;
+  copyrightonto:hasPerformance :performance ;
+  copyrightonto:isManifestationOf :serial ;
+.
+:performance
+  rdf:type copyrightonto:Performance ;
+  copyrightonto:hasRecording :motion_picture ;
+.
+:motion_picture
+  rdf:type copyrightonto:AudiovisualRecording ;
+  copyrightonto:hasCommunication :broadcast ;
+.
+:broadcast
+  rdf:type copyrightonto:Communication ;
+.
+```
+
+And this is the same model serialized using [JSON-LD](https://json-ld.org):
+
+```json
+{
+  "@context": {
+    "cro": "http://rhizomik.net/ontologies/copyrightonto#",
+    "sample": "http://rhizomik.net/ontologies/copyrightonto/creationmodel-sample.ttl#"
+  },
+  "@graph": [
+    {
+      "@id": "sample:literary_work",
+      "@type": "cro:Work"
+    },
+    {
+      "@id": "sample:serial",
+      "@type": "cro:Work",
+      "cro:isDerivationOf": {
+        "@id": "sample:literary_work"
+      }
+    },
+    {
+      "@id": "sample:script",
+      "@type": "cro:Manifestation",
+      "cro:isManifestationOf": {
+        "@id": "sample:serial"
+      },
+      "cro:hasPerformance": {
+        "@id": "sample:performance"
+      }
+    },
+    {
+      "@id": "sample:performance",
+      "@type": "cro:Performance",
+      "cro:hasRecording": {
+        "@id": "sample:motion_picture"
+      }
+    },
+    {
+      "@id": "sample:motion_picture",
+      "@type": "cro:AudiovisualRecording",
+      "cro:hasCommunication": {
+        "@id": "sample:broadcast"
+      }
+    },
+    {
+      "@id": "sample:broadcast",
+      "@type": "cro:Communication"
+    }
+  ]
+}
+```
 
 ## The Rest of the Copyright Ontology
 
