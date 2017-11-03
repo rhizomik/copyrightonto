@@ -1,6 +1,12 @@
 Creation Model
 ==============
 
+|                                          |                                          |                                          |                                          |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-creationmodel.ttl) | [![DownloadTurtle](https://img.shields.io/badge/style-RDF/XML-orange.svg?style=flat&label=Download)](http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) | [![DownloadTurtle](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](docs/index.html) | [![DownloadTurtle](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualize)](http://visualdataweb.de/webvowl/#iri=http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) |
+
+
+
 **Table of Contents**
 
 - [Motivation](#motivation)
@@ -142,15 +148,25 @@ In case of requiring an even greater level of detail, the whole set of Creation 
 
 ### Implementation
 
-The Creation Model part of the Copyright Ontology is implemented using the Resource Description Format ([**RDF**](https://www.w3.org/RDF/)) and the Web Ontology Language ([**OWL**](https://www.w3.org/OWL/)). It is available in [**Turtle**](https://www.w3.org/TR/turtle/) RDF serialization format:
+The Creation Model part of the Copyright Ontology is implemented using the Resource Description Format ([RDF](https://www.w3.org/RDF/)) and the Web Ontology Language ([OWL](https://www.w3.org/OWL/)). It is available in [Turtle](https://www.w3.org/TR/turtle/) RDF serialization format:
 
 - Copyright Ontology Creation Model: [**copyrightonto-creationmodel.ttl**](copyrightonto-creationmodel.ttl)
 
 The ontology can be downloaded from the previous link and converted to other RDF/OWL formats using services like Anything To Triples ([Any23](http://any23.org/)), for instance to [**RDF/XML**](http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl)
 
-It is also possible get an overview of the ontology using visualisation services:
+<ul> Copyright Ontology Creation Model:
+<a href="http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl" download="copyrightonto-creationmodel.rdf">
+   <b>copyrightonto-creationmodel.rdf</b>
+</a>
+</ul>
 
-- Copyright Ontology Creation Model [**overview**](http://visualdataweb.de/webvowl/#iri=http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) generated using [WebVOWL](http://vowl.visualdataweb.org/webvowl/).
+There is also an ontology documentation generated from the RDF/OWL using [Ontodocs](https://github.com/lambdamusic/Ontodocs):
+
+- Copyright Ontology Creation Model: [**documentation**](docs/index.html)
+
+It is also possible get an overview of the ontology using visualisation services like [WebVOWL](http://vowl.visualdataweb.org/webvowl/):
+
+- Copyright Ontology Creation Model [**overview**](http://visualdataweb.de/webvowl/#iri=http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl)
 
 #### Modelling Sample
 
