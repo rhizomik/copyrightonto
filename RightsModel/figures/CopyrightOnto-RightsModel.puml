@@ -1,0 +1,15 @@
+@startuml
+digraph CreationLifeCycleSample {
+  node [shape=box]; rankdir=LR
+
+  "Copyright" -> "Economic Rights", "Moral Rights", "Related Rights";
+
+  "Economic Rights" -> "Reproduction Right", "Distribution Right", "Public Performance Right", "Fixation Rights", "Communication Rights", "Transformation Rights";
+  "Moral Rights" -> "Attribution Right", "Integrity Right", "Disclosure Right", "Withdrawal Right";
+  "Related Rights" -> "Performers Rights", "Phonograms Producers Rights", "Broadcasters Rights"
+
+  "Fixation Rights" -> "Sound Recording Right", "Motion Picture Right";
+  "Communication Rights" -> "Broadcasting Right", "Making Available Right";
+  "Transformation Rights" -> "Adaptation Right", "Translation Right";
+}
+@enduml
