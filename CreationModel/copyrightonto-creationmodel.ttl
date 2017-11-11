@@ -262,15 +262,12 @@ Examples: Mozart's The Magic Flute or Victor Hugo's Les Misérables."""@en ;
     ] ;
   rdfs:subPropertyOf :creationModelProperty ;
 .
-schema:Event
-  rdf:type owl:Class
-.
 schema:CreativeWork
   rdf:type owl:Class
 .
-schema:Intangible
+schema:Event
   rdf:type owl:Class
 .
-schema:Event
+schema:Intangible
   rdf:type owl:Class
 .

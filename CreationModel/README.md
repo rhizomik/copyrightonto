@@ -2,7 +2,7 @@ Creation Model
 ==============
 
 | Downloads                                | Documentation                            |
-| :---------------------------------------- | :---------------------------------------- |
+| :--------------------------------------- | :--------------------------------------- |
 | [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-creationmodel.ttl) [![DownloadTurtle](https://img.shields.io/badge/style-RDF/XML-orange.svg?style=flat&label=Download)](http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) | [![DownloadTurtle](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/creation-model/) [![DownloadTurtle](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) |
 
 **Table of Contents**
@@ -146,7 +146,7 @@ In case of requiring an even greater level of detail, the whole set of Creation 
 
 ### Implementation
 
-The Creation Model part of the Copyright Ontology is implemented using the Resource Description Format ([RDF](https://www.w3.org/RDF/)) and the Web Ontology Language ([OWL](https://www.w3.org/OWL/)). It is available in [Turtle](https://www.w3.org/TR/turtle/) RDF serialization format:
+The **Creation Model** part of the **Copyright Ontology** is implemented using the Resource Description Format ([RDF](https://www.w3.org/RDF/)) and the Web Ontology Language ([OWL](https://www.w3.org/OWL/)). It is available in [Turtle](https://www.w3.org/TR/turtle/) RDF serialization format:
 
 - Copyright Ontology Creation Model: [**copyrightonto-creationmodel.ttl**](copyrightonto-creationmodel.ttl)
 
