@@ -11,5 +11,6 @@ digraph CreationLifeCycleSample {
   "Fixation Right" -> "Sound Recording Right", "Motion Picture Right";
   "Communication Right" -> "Broadcasting Right", "Making Available Right";
   "Transformation Right" -> "Adaptation Right", "Translation Right";
+  "Distribution Right" -> "Rental Right", "Importation Right";
 }
 @enduml
