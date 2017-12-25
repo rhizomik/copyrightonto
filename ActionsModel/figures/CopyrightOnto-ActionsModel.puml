@@ -14,21 +14,19 @@ digraph CopyrightOntoCreationModel {
     subgraph cluster_P { label="Performance";
       "Improvisation"
     }
-    subgraph cluster_C { label="Communication";
-       "Live \n Communication";
-    }
+    "Communication";
   }
 
   "Manifestation" -> "Improvisation" [label="Perform", lhead=cluster_P, ltail=cluster_MR];
 
-  "Improvisation":e -> "Live \n Communication":e [label="Retransmit", ltail=cluster_P];
+  "Improvisation":e -> "Communication":e [label="Retransmit", ltail=cluster_PC];
 
-  "Improvisation":se -> "Recording":n [xlabel="Record", ltail=cluster_PC];
+  "Improvisation":se -> "Recording":n [xlabel="Record  ", ltail=cluster_PC];
 
-  "Recording" -> "Instance" [label="Copy", ltail=cluster_MR];
-  "Recording" -> "Live \n Communication" [label="Communicate", lhead=cluster_C, ltail=cluster_MR];
+  "Recording" -> "Instance" [label=" Copy", ltail=cluster_MR];
+  "Recording" -> "Communication" [label=" Communicate", lhead=cluster_C, ltail=cluster_MR];
 
   {rank=same "Manifestation" "Improvisation"}
-  {rank=same "Recording" "Live \n Communication"}
+  {rank=same "Recording" "Communication"}
 }
 @enduml
