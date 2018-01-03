@@ -1,0 +1,17 @@
+@startuml
+digraph CopyrightOntoPerformSample {
+  node [shape=box]; rankdir=TB; nodesep=0.8; compound=true; newrank=true;
+
+  "Glenn Gould" -> "Perform" [dir=back, label="agent"]
+  "Piano" -> "Perform" [dir=back, label="instrument"]
+  "Bach's Goldberg Variations \n (BWV 988)" -> "Perform" [dir=back, label="object"]
+  "Perform" -> "The Goldberg Variations \n (1955 performance)" [label="result"]
+  "Perform" -> "1955-06-10" [label="startTime"]
+  "Perform" -> "1955-06-16" [label="endTime"]
+  "Perform" -> "Columbia 30th Street Studio" [label="location"]
+
+  {rank=same "Glenn Gould" "Piano"}
+  {rank=same "Bach's Goldberg Variations \n (BWV 988)" "Perform" "The Goldberg Variations \n (1955 performance)"}
+  {rank=same "1955-06-10" "1955-06-16" "Columbia 30th Street Studio"}
+}
+@enduml

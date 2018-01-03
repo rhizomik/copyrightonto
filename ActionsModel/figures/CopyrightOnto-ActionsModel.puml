@@ -1,5 +1,5 @@
 @startuml
-digraph CopyrightOntoCreationModel {
+digraph CopyrightOntoActionsModel {
   node [shape=box]; rankdir=TB; nodesep=0.8; compound=true; newrank=true;
 
   "Work":n -> "Work":n [label="Derive"];
