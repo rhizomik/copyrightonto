@@ -2,7 +2,7 @@
 
 | Downloads                                | Documentation                            |
 | :--------------------------------------- | :--------------------------------------- |
-| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-creationmodel.ttl) [![DownloadTurtle](https://img.shields.io/badge/style-RDF/XML-orange.svg?style=flat&label=Download)](http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) | [![DownloadTurtle](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/creation-model/) [![DownloadTurtle](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) |
+| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-rightsmodel.ttl) [![DownloadRDFXML](https://img.shields.io/badge/style-RDF/XML-orange.svg?style=flat&label=Download)](http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl) | [![Documentation](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/rights-model/) [![Visualization](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=http://any23.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl) |
 
 **Table of Contents**
 
@@ -14,9 +14,6 @@
   + [User Rights?](#user-rights-)
     - [Copyright Exceptions](#copyright-exceptions)
 - [Implementation](#implementation)
-    - [Implementation Samples](#implementation-samples)
-      * [Rules](#rules)
-      * [Smart Contract](#smart-contract)
 - [Related Work](#related-work)
 - [The Rest of the Copyright Ontology](#the-rest-of-the-copyright-ontology)
 - [References](#references)
