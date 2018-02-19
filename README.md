@@ -1,10 +1,12 @@
 # CopyrightOnto - Copyright Ontology
 _**A Copyright Ontology for Content Rights Management**_
 
-An ontology is a formalization of concepts and relations within a domain. The Copyright Ontology tries to formalise the copyright domain. It is a Web Ontology and thus it is implemented using the World Wide Web Consortium (W3C) standards Resource Description Framework ([RDF](https://de.wikipedia.org/wiki/Resource_Description_Framework)) and Web Ontology Language ([OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language)).
+An ontology is a formalisation of concepts and relations within a domain. The Copyright Ontology tries to formalise the copyright domain as a way to facilitate automated (or computer-supported) copyright management through the whole content value chain, as it is shaped by copyright law. Therefore, it does not focus just on the last step, end-users permissions to consume content, like many rights languages and ontologies do.  
+
+It is a Web Ontology, and thus it is implemented using the World Wide Web Consortium (W3C) standards Resource Description Framework ([RDF](https://de.wikipedia.org/wiki/Resource_Description_Framework)) and Web Ontology Language ([OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language)).
 
 ## Approach
-The copyright domain is quite complex so the **Copyright Ontology** attempts its **conceptualisation** in **three steps**, which allows facing this process in an incremental way.
+The copyright domain is quite complex, so the **Copyright Ontology** attempts its **conceptualisation** in **three steps**, which allows incrementally facing this process.
 
 First, the objective is the more primitive part, the Creation Model. Second, there is the model for the rights part, the Rights Model, and finally a model for the available actions, the Action Model, which is built on top of the two previous ones:
 
