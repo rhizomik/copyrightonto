@@ -15,9 +15,11 @@
 
 ## Overview
 
-This is the last part of the Copyright Ontology, build on the foundations provided by the other two parts, the [**Creation Model**](../CreationModel) and the [**Rights Model**](../RightsModel). The Action Model captures the dynamic part of the Copyright Ontology, the actions performed by creations value chains' actors. 
+This is the last part of the Copyright Ontology, build on the foundations provided by the other two parts, the [**Creation Model**](../CreationModel) and the [**Rights Model**](../RightsModel). The Action Model captures the dynamic part of the Copyright Ontology, the actions performed by creations value chains' actors. Actions are the main building-block of the Copyright Ontology, in the sense that usually all representations based on this ontology will be built arround one or more actions that connect all the parties and entities participating or involved in them. 
 
-The most relevant set of actions includes those that "move" creations across their different "statuses" identified in the [**Creation Model**](../CreationModel), like making the abstract idea represented by a *Work* perceivable as a *Manifestation* which involves the ***Manifest*** action. The most relevant actions in this set are presented in Figure 1 as arrows that link the original and resulting creation "statuses" and illustrate the connection between the Creation and Actions Models. Other examples are the ***Perform*** action to generate a *Performance* from a *Manifestation* or the ***Record*** one to fix a *Performance* into a *Recording*.
+This is an approach, which can be called "Action-Oriented Modelling", followed since early versions of the Copyright Ontology (García, 2010). The importance of Actions for knowledge representation is also highlighted by other initiatives, like schema.org that includes them as part of their proposed vocabulary (Brickley, 2014). This has facilitated the integration of the Copyright Ontology with schema.org, as detailed next.
+
+The most relevant set of actions in the Copyright Ontology includes those that "move" creations across their different "statuses" identified in the [**Creation Model**](../CreationModel), like making the abstract idea represented by a *Work* perceivable as a *Manifestation* which involves the ***Manifest*** action. The most relevant actions in this set are presented in Figure 1 as arrows that link the original and resulting creation "statuses" and illustrate the connection between the Creation and Actions Models. Other examples are the ***Perform*** action to generate a *Performance* from a *Manifestation* or the ***Record*** one to fix a *Performance* into a *Recording*.
 
 | ![Actions Model](http://www.plantuml.com/plantuml/svg/JSux3W8n34NHdbN00eXxga7KY3M4n4miaZZoHoDOFQ50edh5FSLRrAAOjxexK4_LCxhKVJ4RUWAGk8MLhFZT5ILnD-mM4ZUGGczkz8J4uoMq5fkHeKKr53Wd8-vwvOmL7hIweCBb9szJ7lz96Dy32_OyzmC0) |
 | :--------------------------------------: |
@@ -44,13 +46,13 @@ Table 1. Semantic roles relating actions to the entities participating in them
 |           | schema:toLocation   | The final location of the object or the agent after the action |
 | when      | schema:startTime    | When the action started or the time it is expected to start |
 |           | schema:endTime      | When the action finished or the time it is expected to end |
-|           | pointInTime         |                                          |
-|           | duration            |                                          |
+|           | pointInTime         | The point in time when the action happens |
+|           | duration            | The amount of time the action requires to complete |
 | with      | schema:instrument   | The object that helps the agent perform the action |
-| why       | aim                 | reason                                   |
-| how       | manner              |                                          |
-| if        | condition           |                                          |
-| then      | consequence         |                                          |
+| why       | aim                 | The reason  or objective of the action   |
+| how       | manner              | The way the action is carried out         |
+| if        | condition           | Something that must hold or happen before the action starts |
+| then      | consequence         | Something that must hold or happen after the action is completed |
 
 For instance, for a particular performance as the one shown in Figure 2, it is possible to capture the details of the ***Perform*** action using some of the semantic roles presented in Table 1.
 
@@ -113,7 +115,7 @@ Other fundamental actions are those governed by the rights defined in the [**Rig
 
 - *Reproduction Right*: regulates the ***Copy*** action.
 - *Distribution Right*: includes the ***Distribute*** action, with the more specific actions depending on the kind of distribution: ***Sell***, ***Rent*** and ***Lend***.
-- *Transformation Right*: controls the ***Derive*** action, which includes the more specific kinds of derivations of new works from existing ones: ***Adapt*** and ***Translate***.
+- *Transformation Right*: controls the ***Derive*** action, which includes the more specific kinds of derivations of new works from existing ones: ***Adapt***, ***Translate*** or **Synchronise** (a musical composition recording with an audiovisual work).
 
 [TODO: concrete example and Figure 4]
 
@@ -121,9 +123,9 @@ Other fundamental actions are those governed by the rights defined in the [**Rig
 
 ...
 
-- *Performers Rights*: performers have exclusive Fixation, Communication, Reproduction, Public Performance and Distribution Rights over their performances.
-- *Producers Rights*: producers have exclusive Reproduction Right over their fixations and exclusive Distribution Right over the resulting copies.
-- *Broadcasters Rights*: broadcasters have exclusive Broadcasting, Fixation and Reproduction Rights over their broadcasts.
+- *Performers Rights*: performers have exclusive Fixation, Communication, Reproduction, Public Performance and Distribution Rights over their performances. The **Perform** action gives rise to this rights of the performer.
+- *Producers Rights*: producers have exclusive Reproduction Right over their fixations and exclusive Distribution Right over the resulting copies. These rights are the result of a **Record** action by the producer.
+- *Broadcasters Rights*: broadcasters have exclusive Broadcasting, Fixation and Reproduction Rights over their broadcasts, the result of the **Broadcast** action. 
 
 ...
 
@@ -480,7 +482,62 @@ value chain.
 
 ## Summary
 
-Actions Hierarchy:
+Schema.org actions hierarchy (selection relevant to Copyright Ontology):
+
+Action
+
+- ...
+- AssessAction
+  - ReactAction
+    - [AgreeAction](http://schema.org/AgreeAction)
+    - [DisagreeAction](http://schema.org/DisagreeAction)
+    - [EndorseAction](http://schema.org/EndorseAction)
+    - [WantAction](http://schema.org/WantAction)
+- ConsumeAction
+  - [ListenAction](http://schema.org/ListenAction)
+  - [ReadAction](http://schema.org/ReadAction)
+  - UseAction
+  - [ViewAction](http://schema.org/ViewAction)
+  - [WatchAction](http://schema.org/WatchAction)
+- ControlAction
+- CreateAction
+- OrganizeAction
+  - AllocateAction
+    - [AcceptAction](http://schema.org/AcceptAction)
+    - [AssignAction](http://schema.org/AssignAction)
+    - [AuthorizeAction](http://schema.org/AuthorizeAction)
+    - [RejectAction](http://schema.org/RejectAction)
+- PlayAction
+  - [PerformAction](http://schema.org/PerformAction)
+- TradeAction
+  - [BuyAction](http://schema.org/BuyAction)
+  - [DonateAction](http://schema.org/DonateAction)
+  - [OrderAction](http://schema.org/OrderAction)
+  - [PayAction](http://schema.org/PayAction)
+  - [QuoteAction](http://schema.org/QuoteAction)
+  - [RentAction](http://schema.org/RentAction)
+  - [SellAction](http://schema.org/SellAction)
+  - [TipAction](http://schema.org/TipAction)
+- TransferAction
+  - [BorrowAction](http://schema.org/BorrowAction)
+  - [DownloadAction](http://schema.org/DownloadAction)
+  - [GiveAction](http://schema.org/GiveAction)
+  - [LendAction](http://schema.org/LendAction)
+  - [ReceiveAction](http://schema.org/ReceiveAction)
+  - [ReturnAction](http://schema.org/ReturnAction)
+  - [SendAction](http://schema.org/SendAction)
+  - [TakeAction](http://schema.org/TakeAction)
+- UpdateAction
+  - AddAction
+    - InsertAction
+      - [AppendAction](http://schema.org/AppendAction)
+      - [PrependAction](http://schema.org/PrependAction)
+
+
+
+
+
+Copyright Ontology actions hierarchy (to be integrated into schema.org hierarchy):
 
 - Agree
 - Attribute
@@ -512,7 +569,10 @@ Actions Hierarchy:
 
 ## References
 
-Sowa, J. F. (1999). *Knowledge Representation. Logical, philosophical and computational foundations*. Pacific Grove, CA, USA: Brooks Cole Publishing Co.
+Brickley, D. (2014). *Announcing Schema.org Actions*. Official blog for schema.org. Retrieved from http://blog.schema.org/2014/04/announcing-schemaorg-actions.html
+
+García, R. (2010). *A Semantic Web Approach to Digital Rights Management*. Saarbrücken, Germany: VDM Verlag. Retrieved from http://rhizomik.net/~roberto/thesis
 
 Guha, R. V., Brickley, D., & Macbeth, S. (2016). Schema.org: Evolution of Structured Data on the Web. *Communications of the ACM*, *59*(2), 44–51. https://doi.org/[10.1145/2844544](https://doi.org/10.1145/2844544)
 
+Sowa, J. F. (1999). *Knowledge Representation. Logical, philosophical and computational foundations*. Pacific Grove, CA, USA: Brooks Cole Publishing Co.
