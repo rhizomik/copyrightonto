@@ -15,13 +15,13 @@
 
 ## Overview
 
-This is the last part of the Copyright Ontology, build on the foundations provided by the other two parts, the [**Creation Model**](../CreationModel) and the [**Rights Model**](../RightsModel). The Action Model captures the dynamic part of the Copyright Ontology, the actions performed by creations value chains' actors. Actions are the main building-block of the Copyright Ontology, in the sense that usually all representations based on this ontology will be built arround one or more actions that connect all the parties and entities participating or involved in them. 
+This is the last part of the Copyright Ontology, built on the foundations provided by the other two parts, the [**Creation Model**](../CreationModel) and the [**Rights Model**](../RightsModel). The Action Model captures the dynamic part of the Copyright Ontology, the actions performed by creations value chains' actors. Actions are the main building-block of the Copyright Ontology, in the sense that usually all representations based on this ontology will be built arround one or more actions that connect all the parties and entities participating or involved in them. 
 
 This is an approach, which can be called "Action-Oriented Modelling", followed since early versions of the Copyright Ontology (García, 2010). The importance of Actions for knowledge representation is also highlighted by other initiatives, like schema.org that includes them as part of their proposed vocabulary (Brickley, 2014). This has facilitated the integration of the Copyright Ontology with schema.org, as detailed next.
 
-The most relevant set of actions in the Copyright Ontology includes those that "move" creations across their different "statuses" identified in the [**Creation Model**](../CreationModel), like making the abstract idea represented by a *Work* perceivable as a *Manifestation* which involves the ***Manifest*** action. The most relevant actions in this set are presented in Figure 1 as arrows that link the original and resulting creation "statuses" and illustrate the connection between the Creation and Actions Models. Other examples are the ***Perform*** action to generate a *Performance* from a *Manifestation* or the ***Record*** one to fix a *Performance* into a *Recording*.
+The most relevant set of actions in the Copyright Ontology includes those that "move" creations along their value chain, based on the stages identified in the [**Creation Model**](../CreationModel). For instance, the ***Manifest*** action makes the abstract idea represented by a *Work* perceivable as a *Manifestation*. Other examples are the ***Perform*** action to generate a *Performance* from a *Manifestation* or the ***Record*** one to fix a *Performance* into a *Recording*. The most relevant actions in this set are presented in Figure 1 as arrows, which link the source and target stage in the value chain and illustrate the connection between the Creation and Action Models.
 
-| ![Actions Model](http://www.plantuml.com/plantuml/svg/JSux3W8n34NHdbN00eXxga7KY3M4n4miaZZoHoDOFQ50edh5FSLRrAAOjxexK4_LCxhKVJ4RUWAGk8MLhFZT5ILnD-mM4ZUGGczkz8J4uoMq5fkHeKKr53Wd8-vwvOmL7hIweCBb9szJ7lz96Dy32_OyzmC0) |
+| ![Actions Model](http://www.plantuml.com/plantuml/svg/JSv12W8n38NX_Pn23s23Mq4SSIsUeTF6DjWsGveeUdgx4Tmz-B_5cxjwKQjbsb8BnIAQb4rMNVi1GFpB9T9iYtMKm4sngGjSGJ9zkD830gzlePHrH8RgkwB0EIXnwrUEME1EoGGxN7xoDkJkdxXr73WzZ_jfnXR7_W80) |
 | :--------------------------------------: |
 | Figure 1. CopyrightOnto actions in the context of the Creation Model |
 
@@ -482,82 +482,49 @@ value chain.
 
 ## Summary
 
-Schema.org actions hierarchy (selection relevant to Copyright Ontology):
+Actions defined in the Copyright Ontology (prefixed with "pro:") in the context of the schema.org actions hierarchy (prefixed with "schema:"):
 
-Action
-
-- ...
-- AssessAction
-  - ReactAction
-    - [AgreeAction](http://schema.org/AgreeAction)
-    - [DisagreeAction](http://schema.org/DisagreeAction)
-    - [EndorseAction](http://schema.org/EndorseAction)
-    - [WantAction](http://schema.org/WantAction)
-- ConsumeAction
-  - [ListenAction](http://schema.org/ListenAction)
-  - [ReadAction](http://schema.org/ReadAction)
-  - UseAction
-  - [ViewAction](http://schema.org/ViewAction)
-  - [WatchAction](http://schema.org/WatchAction)
-- ControlAction
-- CreateAction
-- OrganizeAction
-  - AllocateAction
-    - [AcceptAction](http://schema.org/AcceptAction)
-    - [AssignAction](http://schema.org/AssignAction)
-    - [AuthorizeAction](http://schema.org/AuthorizeAction)
-    - [RejectAction](http://schema.org/RejectAction)
-- PlayAction
-  - [PerformAction](http://schema.org/PerformAction)
-- TradeAction
-  - [BuyAction](http://schema.org/BuyAction)
-  - [DonateAction](http://schema.org/DonateAction)
-  - [OrderAction](http://schema.org/OrderAction)
-  - [PayAction](http://schema.org/PayAction)
-  - [QuoteAction](http://schema.org/QuoteAction)
-  - [RentAction](http://schema.org/RentAction)
-  - [SellAction](http://schema.org/SellAction)
-  - [TipAction](http://schema.org/TipAction)
-- TransferAction
-  - [BorrowAction](http://schema.org/BorrowAction)
-  - [DownloadAction](http://schema.org/DownloadAction)
-  - [GiveAction](http://schema.org/GiveAction)
-  - [LendAction](http://schema.org/LendAction)
-  - [ReceiveAction](http://schema.org/ReceiveAction)
-  - [ReturnAction](http://schema.org/ReturnAction)
-  - [SendAction](http://schema.org/SendAction)
-  - [TakeAction](http://schema.org/TakeAction)
-- UpdateAction
-  - AddAction
-    - InsertAction
-      - [AppendAction](http://schema.org/AppendAction)
-      - [PrependAction](http://schema.org/PrependAction)
-
-
-
-
-
-Copyright Ontology actions hierarchy (to be integrated into schema.org hierarchy):
-
-- Agree
-- Attribute
-- Communicate (Retransmit)
-  - Broadcast
-  - Make Available
-- Copy
-- Distribute
-  - Sell
-  - Rent
-  - Lend
-- Derive
-  - Adapt
-  - Translate
-- Disagree
-- Perform
-- Quote
-- Record
-- Transfer
-- ...
+schema:Action
+- schema:AssessAction
+  - schema:ReactAction
+    - [schema:AgreeAction](http://schema.org/AgreeAction) = **cro:Agree**
+    - [schema:DisagreeAction](http://schema.org/DisagreeAction) = **cro:Disagree**
+    - [schema:EndorseAction](http://schema.org/EndorseAction)
+    - [schema:WantAction](http://schema.org/WantAction)
+- schema:ConsumeAction
+  - [schema:ListenAction](http://schema.org/ListenAction)
+  - [schema:ReadAction](http://schema.org/ReadAction)
+  - schema:UseAction
+  - [schema:ViewAction](http://schema.org/ViewAction)
+  - [schema:WatchAction](http://schema.org/WatchAction)
+- schema:CreateAction = **cro:Manifest**
+- schema:OrganizeAction
+  - schema:AllocateAction
+    - [schema:AcceptAction](http://schema.org/AcceptAction)
+    - [schema:AssignAction](http://schema.org/AssignAction)
+    - [schema:AuthorizeAction](http://schema.org/AuthorizeAction)
+    - [schema:RejectAction](http://schema.org/RejectAction)
+- schema:PlayAction
+  - [schema:PerformAction](http://schema.org/PerformAction) = **cro:Perform**
+- **cro:Distribute**
+  - [schema:RentAction](http://schema.org/RentAction) = **cro:Rent**
+  - [schema:SellAction](http://schema.org/SellAction) = **cro:Sell**
+  - [schema:LendAction](http://schema.org/LendAction) = **cro:Lend**
+- schema:Trade
+  - [schema:PayAction](http://schema.org/PayAction)
+- schema:TransferAction
+  - [schema:DownloadAction](http://schema.org/DownloadAction)
+- **cro:Attribute**
+- **cro:Communicate** (**cro:Retransmit**)
+  - **cro:Broadcast**
+  - **cro:Make Available**
+- **cro:Copy**
+- **cro:Derive**
+  - **cro:Adapt**
+  - **cro:Translate**
+  - **cro:Synchronise**
+- **cro:Quote**
+- **cro:Record**
 
 ## Related Work
 
