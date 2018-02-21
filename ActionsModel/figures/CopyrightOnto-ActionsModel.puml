@@ -26,6 +26,8 @@ digraph CopyrightOntoActionsModel {
   "Recording" -> "Instance" [label=" Copy", ltail=cluster_MR];
   "Recording" -> "Communication" [label=" Communicate", lhead=cluster_C, ltail=cluster_MR];
 
+  "Instance" -> "Instance" [label="Distribute"]
+
   {rank=same "Manifestation" "Improvisation"}
   {rank=same "Recording" "Communication"}
 }
