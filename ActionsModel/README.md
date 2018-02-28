@@ -71,9 +71,13 @@ Some of the actions operate on creations abstract form, Works, and embody them i
 
 Both actions can be further detailed using the semantic roles listed in Table 1 to identify the creator, the originating Work and the resulting Manifestation or Improvisation. Additional information like the location or the point in time can be also included, as shown in Figure 3. 
 
-Moreover, as in most copyright regimes the creator becomes the holder of all rights on creations just by the mere fact of manifesting them, it is also possible to capture using the Actions Model this fact, as illustrated in Figure 3 through the **consequence** semantic role.
+Moreover, as in most copyright regimes the creator becomes the holder of all rights on creations just by the mere fact of manifesting them, it is also possible to capture this fact using the Actions Model, as illustrated in Figure 3.
 
-[TODO: Figure 3 and additional explanation]
+| ![Actions Model](http://www.plantuml.com/plantuml/svg/DOun4W8X301xNw4FaFHMvrZVMFW2X1na1C8aOMxqzM9XjSLkiOkQ5nkr74xKGXaHXvHZDkjw0H2_kqIMntCeIk1csCm5hY2PFbpf1O7xMoXbcvAXUZKKk0OZRhfon08RfI6eSFkNzrcULzzeGxM7hxsWwx-51LkS_080) |
+| :--------------------------------------: |
+| Figure 3. Example of model of a Manifest action of a derivation of an existing Work |
+
+Through the **consequence** semantic role, the **Manifest** action is linked to a resulting **Agree** action (detailed in following sections) that captures the fact that the copyright regime assigns all **Copyright** on the resulting **Manifestation** to the creator. Note the link between the derived **Work** and the original one. This link is produced by a **Derive** action, also detailed in the following sections.
 
 ### Implementation
 
