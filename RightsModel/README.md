@@ -7,30 +7,40 @@
 **Table of Contents**
 
 - [Overview](#overview)
-- [Economic Rights](#economic-rights)
-- [Other Rights](#other-rights)
-  + [Moral Rights](#moral-rights)
-  + [Related Rights](#related-rights)
-  + [User Rights?](#user-rights-)
+- [WIPO Rights Model](#wipo-rights-model)
+  - [Economic Rights](#economic-rights)
+  - [Other Rights](#other-rights)
+    - [Moral Rights](#moral-rights)
+    - [Related Rights](#related-rights)
     - [Copyright Exceptions](#copyright-exceptions)
-- [Implementation](#implementation)
+- [US Music Industry Rights Model](#us-music-industry-rights-model)
+- [US Film Industry Rights Model](#us-film-industry-rights-model)
+- [Implementations](#implementation)
 - [Related Work](#related-work)
 - [The Rest of the Copyright Ontology](#the-rest-of-the-copyright-ontology)
 - [References](#references)
 
 ## Overview
 
-Once we have established the [**Creation Model**](../CreationModel), the foundations for modelling creations' value chains are laid. However, it is necessary also to capture the dynamics that move them along these value chains, which are shaped by the underlying copyright legal framework. This framework is modelled by the Rights Model part of the Copyright Ontology described in this document.
+Once we have established the [**Creation Model**](../CreationModel) and the [**Actions Model**](../ActionsModel), the foundations for modelling creations' value chains are laid and it is time to capture how they are regulated. This is done by the **Rights Models** part of the Copyright Ontology described in this document, which capture the copyright legal aspects.
 
-Though there is not a global copyright framework that uniformly applies worldwide, there have been many attempts to harmonise the plethora of country-level regulations into a unified system through the World Intellectual Property Organisation [(WIPO, 2004)](#references). 
+There are many legal systems worldwide and the objective of the Copyright Ontology is to provide the mechanisms to model them. As part of this effort, and to test and illustrate the capabilities of the Rights Model, we have also generated some **Rights Models for specific legal frameworks**. 
 
-The Copyright Ontology captures this overarching set of rights in its Rights Model. It includes **economic** and **related rights**, plus **moral rights** when applicable,  as shown in Figure 1.
+The most relevant one, as it helps testing the scope of the whole Copyright Ontology, is the legal framework proposed by the **World Intellectual Property Organisation** [(WIPO, 2004)](#references) described in the next section. 
+
+Moreover, and as work in progress, the idea is to also model **country specific** legal systems or even the rights governing **particular industries**. For instance the music or the film industries in the USA, which are also described in subsequent sections.
+
+## WIPO Rights Model
+
+Though there is not a global copyright framework that uniformly applies worldwide, the World Intellectual Property Organisation (WIPO) has arranged [many treaties](http://www.wipo.int/treaties/en/) to harmonise the plethora of country-level regulations into a unified system that facilitates copyright protection and management across borders. For instance, the [Berne Convention for the Protection of Literary and Artistic Works](http://www.wipo.int/treaties/en/ip/berne/) (1886) or the [Beijing Treaty on Audiovisual Performances](http://www.wipo.int/treaties/en/ip/beijing/) (2012)
+
+The Copyright Ontology captures this overarching set of rights in its WIPO Rights Model. It includes **economic** and **related rights**, plus **moral rights** when applicable,  as shown in Figure 1.
 
 | ![Copyright Ontology Rights Model](http://www.plantuml.com/plantuml/svg/JSez3i8m343Xgy01Y7TMPbIfDoYfcrWaSUGV8JXzqm6fwtlVbLeilg9BkMIphdS0MJuXaML_kQ94ReRDGkGAakd7bTuGkN-5KhOn6UgYXWBp4VJ9AnROABcWmkCFfm5l9n6wrx83) |
 | :--------------------------------------: |
 | Figure 1. The Rights Model in the Copyright Ontology |
 
-## Economic Rights
+### Economic Rights
 
 These are the most relevant rights in the context of copyright value chains. They are related to the production and commercial aspects of copyright:
 
@@ -43,11 +53,11 @@ These are the most relevant rights in the context of copyright value chains. The
 
 These rights are conceded to the author or promoter of the creation by the mere act of bringing the work into existence. Consequently, whenever an author generates a new creation, the author **automatically** gets all Economic Rights, and also the Moral Rights as detailed next. This fact can also be captured using the Copyright Ontology as detailed in the [Actions Model](../ActionsModel). From this initial situation, it is possible to transfer, or at least license, the Economic Rights to third parties giving rise to content value chains, as also detailed in the [Actions Model](../ActionsModel).
 
-## Other Rights
+### Other Rights
 
 In addition to the Economic Rights, many jurisdictions recognise additional rights. Many of them are also being harmonised worldwide through different treaties. For instance, the Berne Convention requires member countries to grant to authors the Attribution and Integrity moral rights. There are also treaties for the protection of related rights, like those of performers, producers or broadcasters as detailed next.
 
-### Moral Rights
+#### Moral Rights
 
 Moral rights are always held by the creator and cannot be commercially exploited. They are not present in all legal systems. However, WIPO treaties are promoting some of them to improve worldwide copyright law harmonisation:
 
@@ -56,7 +66,7 @@ Moral rights are always held by the creator and cannot be commercially exploited
 -   **Disclosure Right**: exclusive right to reveal the work, making it available.
 -   **Withdrawal Right**: exclusive right to withdraw the work from the market.
 
-### Related Rights
+#### Related Rights
 
 In addition to authors' rights, other parties also involved in the exploitation of works enjoy their own rights. Performers, producers and broadcasters make a significant contribution to make works reach end-users. Their contribution entails the **Related Rights**, also known as **Neighbouring Rights**:
 
@@ -64,7 +74,7 @@ In addition to authors' rights, other parties also involved in the exploitation 
 -   **Producers Rights**: producers have exclusive Reproduction Right over their fixations and exclusive Distribution Right over the resulting copies. As before, these rights will be in addition to the rights of copyright owners.
 -   **Broadcasters Rights**: broadcasters have exclusive Broadcasting, Fixation and Reproduction Rights over their broadcasts. Here broadcasting of a broadcast is understood as re-broadcasting. Re-broadcasting is either simultaneous transmission of a broadcast of a program being received from another source or a new deferred broadcast of a formerly recorded program transmitted or received earlier. These rights must be considered in addition to the rights of copyright owners when applicable.
 
-### User Rights?
+#### Copyright Exceptions
 
 End-users do not hold any rights to the creations they consume. They need to comply with copyright to legally access works. This means that they access and consume works under the author or the copyright holder authorisation or license, sticking to their terms and conditions. 
 
@@ -73,8 +83,6 @@ For instance, a license for a film states that the user can only view it a fixed
 This kind of agreements are the kind of expressions captured by rights expression languages that can be modelled using the last part of the Copyright Ontology, the [**Actions Model**](../ActionsModel). The Copyright Ontology is general enough to be able to model copyright-related actions and also end-users actions like those established in content provision agreements.
 
 However, there are some aspects of end-users' activity that are regulated by copyright. End-users have some special permissions that grant them the possibility to perform some actions otherwise forbidden by copyright. These exceptions to copyright are limitations to authors' rights and, although they are often presented as end-user privileges, they are not end-users' rights, though they are commonly referred to like that, e.g. the "right" to quote.
-
-#### Copyright Exceptions
 
 The following copyright exceptions included in the Copyright Ontology are just a generalisation of the full range of exceptions considered in jurisdictions worldwide:
 
@@ -85,6 +93,14 @@ The following copyright exceptions included in the Copyright Ontology are just a
 - **Private Copy Exception**: the reproduction of a work exclusively for the personal and private use of the person who makes the reproduction, e.g. a backup.
 - **Parody Exception**: use for parody and caricature.
 - **Temporary Reproduction Exception**: ephemeral reproductions required for facilitating some technological processes geared towards work usage, e.g. internet caches.
+
+## US Music Industry Rights Model
+
+Work in progress.
+
+## US Film Industry Rights Model
+
+Work in progress.
 
 ## Implementation
 
