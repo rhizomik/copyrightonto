@@ -1,9 +1,5 @@
 # Rights Model
 
-| Downloads                                | Documentation                            |
-| :--------------------------------------- | :--------------------------------------- |
-| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-rightsmodel.ttl) [![DownloadRDFXML](https://img.shields.io/badge/style-RDF/XML-orange.svg?style=flat&label=Download)](http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl) | [![Documentation](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/rightsmodel/) [![Visualization](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl) |
-
 **Table of Contents**
 
 - [Overview](#overview)
@@ -31,6 +27,10 @@ The most relevant one, as it helps testing the scope of the whole Copyright Onto
 Moreover, and as work in progress, the idea is to also model **country specific** legal systems or even the rights governing **particular industries**. For instance the music or the film industries in the USA, which are also described in subsequent sections.
 
 ## WIPO Rights Model
+
+| Downloads                                                    | Documentation                                                |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-rightsmodel.ttl) [![DownloadRDFXML](https://img.shields.io/badge/style-RDF/XML-orange.svg?style=flat&label=Download)](http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl) | [![Documentation](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/rightsmodel/) [![Visualization](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl) |
 
 Though there is not a global copyright framework that uniformly applies worldwide, the World Intellectual Property Organisation (WIPO) has arranged [many treaties](http://www.wipo.int/treaties/en/) to harmonise the plethora of country-level regulations into a unified system that facilitates copyright protection and management across borders. For instance, the [Berne Convention for the Protection of Literary and Artistic Works](http://www.wipo.int/treaties/en/ip/berne/) (1886) or the [Beijing Treaty on Audiovisual Performances](http://www.wipo.int/treaties/en/ip/beijing/) (2012)
 
