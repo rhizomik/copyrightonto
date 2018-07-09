@@ -3,22 +3,22 @@ digraph CopyrightOnto_CreationLifeCycleSampleMusic {
   node [shape=box]; compound=true; newrank=true;
 
   subgraph cluster_left { style=invis;
-    "Work:\ncomposition";
+    "Work:\nmusic work";
     "Instance:\nsheet music print";
     "Recording:\nmaster";
   }
   subgraph cluster_right { style=invis;
-    "Manifestation:\nsheet music";
+    "Manifestation:\ncomposition";
     "Performance:\nstudio play";
     "Communication:\nwebcast";
   }
-  {rank=same "Work:\ncomposition" "Manifestation:\nsheet music"}
+  {rank=same "Work:\nmusic work" "Manifestation:\ncomposition"}
   {rank=same "Instance:\nsheet music print" "Performance:\nstudio play"}
   {rank=same "Recording:\nmaster" "Communication:\nwebcast"}
 
-  "Work:\ncomposition" -> "Manifestation:\nsheet music" [label="is manifestation of", dir=back]
-  "Manifestation:\nsheet music" -> "Instance:\nsheet music print" [label="has instance"]
-  "Manifestation:\nsheet music" -> "Performance:\nstudio play" [label="has performance"]
+  "Work:\nmusic work" -> "Manifestation:\ncomposition" [label="is manifestation of", dir=back]
+  "Manifestation:\ncomposition" -> "Instance:\nsheet music print" [label="has instance"]
+  "Manifestation:\ncomposition" -> "Performance:\nstudio play" [label="has performance"]
   "Performance:\nstudio play" -> "Recording:\nmaster" [label="has recording"]
   "Recording:\nmaster" -> "Communication:\nwebcast" [label="has communication"]
 }

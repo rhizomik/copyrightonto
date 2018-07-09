@@ -1,10 +1,10 @@
 @startuml
 digraph CreationLifeCycleSample {
   node [shape=box]; nodesep=0.5; ranksep=0.5
-  "composition" -> "sheet music" -> "studio play" -> "master" -> "webcast"
-  "sheet music" -> "sheet music print"
+  "music work" -> "composition" -> "studio play" -> "master" -> "webcast"
+  "composition" -> "sheet music print"
 
-  {rank=same "composition" "sheet music" "studio play" "master" "webcast"}
+  {rank=same "music work" "composition" "studio play" "master" "webcast"}
   {rank=same "sheet music print"}
 }
 @enduml

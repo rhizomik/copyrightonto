@@ -5,18 +5,18 @@ digraph CopyrightOntoPerformSample {
   "Work:\nBach's Goldberg Variations" -> "Work:\nRose's Goldbergs Variations" [dir=back, label="isDerivationOf"]
   "1983" -> "Manifest" [dir=back, label="pointInTime"]
   "Work:\nRose's Goldbergs Variations" -> "Manifest" [dir=back, label="object"]
-  "Manifest" -> "Manifestation:\nRose's Goldbergs Variations\nSheet Music" [label="result"]
+  "Manifest" -> "Manifestation:\nRose's Goldbergs Variations\nComposition" [label="result"]
   "Manifest" -> "Rose" [label="agent"]
   "Manifest" -> "Agree" [label="consequence"]
   "Manifest" -> "Someplace" [label="location"]
   "Agree" -> "Copyright" [label="object"]
   "Agree" -> " 1983" [label="pointInTime"]
   "Copyright" -> "Rose" [label="agent"]
-  "Copyright" -> "Manifestation:\nRose's Goldbergs Variations\nSheet Music" [label="object"]
+  "Copyright" -> "Manifestation:\nRose's Goldbergs Variations\nComposition" [label="object"]
   "Copyright" -> "1983 " [label="startTime"]
 
   {rank=same "Work:\nBach's Goldberg Variations" "1983"}
-  {rank=same "Work:\nRose's Goldbergs Variations" "Manifest" "Manifestation:\nRose's Goldbergs Variations\nSheet Music"}
+  {rank=same "Work:\nRose's Goldbergs Variations" "Manifest" "Manifestation:\nRose's Goldbergs Variations\nComposition"}
   {rank=same "Rose" " 1983" "Agree" "Someplace"}
   {rank=same "Copyright"}
 }
