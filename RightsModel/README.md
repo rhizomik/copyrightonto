@@ -42,14 +42,14 @@ The Copyright Ontology captures this overarching set of rights in its WIPO Right
 
 ### Economic Rights
 
-These are the most relevant rights in the context of copyright value chains. They are related to the production and commercial aspects of copyright:
+These are the most relevant rights in the context of copyright value chains. They are related to the exploitation of copyright:
 
 -   **Reproduction Right**: regulates actions that produce replicas of a given object, i.e. *Instances* as defined in the [Creation Model](../CreationModel). Examples of reproduction are the mass production of CD copies from an audio recording master, to scan a book to produce a digitalisation of it or to download a digital file into the local hard disk.
 -   **Distribution Right**: governs actions geared towards distributing previously made copies incorporated into tangible products. The ownership of the corresponding physical support can be transferred permanently, i.e. the distribution act is a sale, or just temporally, i.e. a rent if there is a significant economic compensation or a loan if not.
 -   **Public Performance Right**: controls *Performances* of works, as defined in the [Creation Model](../CreationModel), when they are made in public, i.e. before an audience.
--   **Fixation Right**: regulates the materialisation of a *Performance* into an object that constitutes a *Fixation*, also defined in the [Creation Model](../CreationModel). Common fixations are motion pictures and sound recordings, which are governed by the corresponding **Sound Recording Right** and **Motion Picture Right**.
+-   **Fixation Right**: regulates the materialisation of a *Performance* into an object that constitutes a *Recording*, also defined in the [Creation Model](../CreationModel). Common fixations are motion pictures and sound recordings, which are governed by the corresponding **Sound Recording Right** and **Motion Picture Right**.
 -   **Communication Right**: regulates the realisation of *Communications* of works, as defined in the [Creation Model](../CreationModel), including wire or wireless means and those realised from a place and at a time individually selected. This right is concretised into **Broadcasting Right**, when the communication is simultaneously made to a plurality of people, and **Making Available Right**, when the communication is individually chosen.
--   **Transformation Right**: controls actions that generate new works from previously existing ones. The results of this kind of actions are considered new works, and not mere reproductions because they contribute something new. This right is concretised into the **Adaptation Right** and the **Translation Right**. The former creates a new work of a different type than the original one, e.g. a film from a novel. The latter generates a work of the same type but in a different language.
+-   **Transformation Right**: controls actions that generate new works from previously existing ones. The results of this kind of actions are considered new works, and not mere reproductions because they contribute something new. This right is concretised into the **Adaptation Right**,  the **Translation Right** and the **Synchronization Right**. The former creates a new work of a different type than the original one, e.g. a film from a novel. The latter generates a work of the same type but in a different language.
 
 These rights are conceded to the author or promoter of the creation by the mere act of bringing the work into existence. Consequently, whenever an author generates a new creation, the author **automatically** gets all Economic Rights, and also the Moral Rights as detailed next. This fact can also be captured using the Copyright Ontology as detailed in the [Actions Model](../ActionsModel). From this initial situation, it is possible to transfer, or at least license, the Economic Rights to third parties giving rise to content value chains, as also detailed in the [Actions Model](../ActionsModel).
 
@@ -132,7 +132,7 @@ Though this might be seen as a simplification that facilitates the definition an
 
 ## The Rest of the Copyright Ontology
 
-Like the rest of rights expression languages, the Copyright Ontology also tries to formalise the concrete actions that are governed by the previous rights, which are permitted or prohibited to model licenses or agreements. They are detailed in the last part of the Copyright Ontology, the [**Actions Model**](../ActionsModel).
+Like the rest of rights expression languages, the Copyright Ontology also tries to formalise the concrete actions that are governed by the previous rights, which are permitted or prohibited to model licenses or agreements. They are detailed in the last part of the Copyright Ontology, the [**Actions Model**](../ActionsModel), which together with the [**Creation Model**](../CreationModel) and this **Rights Model** constitute the whole **Copyright Ontology**.
 
 ## References
 

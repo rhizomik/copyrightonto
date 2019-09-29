@@ -1,305 +1,221 @@
-@prefix cro: <http://rhizomik.net/ontologies/copyrightonto#> .
+# baseURI: http://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl
+
+@prefix : <http://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rights: <http://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl#> .
 @prefix schema: <http://schema.org/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://rhizomik.net/ontologies/copyrightonto>
-  rdf:type owl:Ontology ;
+<http://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl>
+  a owl:Ontology ;
   dc:creator <http://rhizomik.net/~roberto/> ;
-  dc:date "2017-10-23"^^xsd:date ;
-  dc:description "Copyright Ontology, http://rhizomik.net/ontologies/copyrightonto"@en ;
+  dc:date "2019-09-02"^^xsd:date ;
+  dc:description "Copyright Ontology - Rights Model, http://rhizomik.net/ontologies/copyrightonto"@en ;
   dc:license <http://creativecommons.org/licenses/by-sa/4.0/> ;
-  vann:preferredNamespacePrefix "cro" ;
-  rdfs:label "Copyright Ontology"@en ;
+  vann:preferredNamespacePrefix "rights" ;
+  rdfs:label "Rights Model"@en ;
 .
-cro:AdaptationRight
-  rdf:type owl:Class ;
-  rdfs:comment ""^^xsd:string ;
+rights:AdaptationRight
+  a owl:Class ;
+  rdfs:comment "" ;
   rdfs:label "Adaptation Right"@en ;
-  rdfs:subClassOf cro:TransformationRight ;
+  rdfs:subClassOf rights:TransformationRight ;
 .
-cro:AttributionRight
-  rdf:type owl:Class ;
+rights:AttributionRight
+  a owl:Class ;
   rdfs:comment "The right to claim authorship of the work."@en ;
   rdfs:label "Attribution Right"@en ;
-  rdfs:subClassOf cro:MoralRights ;
+  rdfs:subClassOf rights:MoralRights ;
 .
-cro:BroadcastersRights
-  rdf:type owl:Class ;
+rights:BroadcastersRights
+  a owl:Class ;
   rdfs:comment "Broadcasters have exclusive Broadcasting, Fixation and Reproduction Rights over their broadcasts. Here broadcasting of a broadcast is understood as re-broadcasting. Re-broadcasting is either simultaneous transmission of a broadcast of a program being received from another source or a new deferred broadcast of a formerly recorded program transmitted or received earlier. These rights must be considered in addition to the rights of copyright owners when applicable."@en ;
   rdfs:label "Broadcasters Rights"@en ;
-  rdfs:subClassOf cro:RelatedRights ;
+  rdfs:subClassOf rights:RelatedRights ;
 .
-cro:BroadcastingRight
-  rdf:type owl:Class ;
-  rdfs:comment ""^^xsd:string ;
+rights:BroadcastingRight
+  a owl:Class ;
+  rdfs:comment "" ;
   rdfs:label "Broadcasting Right"@en ;
-  rdfs:subClassOf cro:CommunicationRight ;
+  rdfs:subClassOf rights:CommunicationRight ;
 .
-cro:CommunicationRight
-  rdf:type owl:Class ;
+rights:CommunicationRight
+  a owl:Class ;
   rdfs:comment "It regulates the realisation of Communications of works, including wire or wireless means and those realised from a place and at a time individually selected. This right is concretised into Broadcasting Right, when the communication is massive, and Make Available Right, when the communication is individually chosen."@en ;
   rdfs:label "Communication Right"@en ;
-  rdfs:subClassOf cro:EconomicRights ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom [
-          rdf:type owl:Class ;
-          owl:unionOf (
-              cro:Performance
-              cro:Recording
-            ) ;
-        ] ;
-      owl:onProperty cro:what ;
-    ] ;
+  rdfs:subClassOf rights:EconomicRights ;
 .
-cro:Copyright
-  rdf:type owl:Class ;
-  rdfs:comment ""^^xsd:string ;
-  rdfs:label "Copyright"^^xsd:string ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom [
-          rdf:type owl:Class ;
-          owl:unionOf (
-              schema:Person
-              schema:Organization
-            ) ;
-        ] ;
-      owl:onProperty cro:who ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:int ;
-      owl:onProperty cro:what ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:int ;
-      owl:onProperty cro:when ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "1"^^xsd:int ;
-      owl:onProperty cro:where ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "1"^^xsd:int ;
-      owl:onProperty cro:who ;
-    ] ;
+rights:Copyright
+  a owl:Class ;
+  rdfs:comment "Everything related to copyright: Economic Rights, Moral Rights, Related Rights and Copyright Exceptions" ;
+  rdfs:label "Copyright" ;
 .
-cro:CopyrightExceptions
-  rdf:type owl:Class ;
+rights:CopyrightExceptions
+  a owl:Class ;
   rdfs:comment "End-users have some special permissions that grant them the possibility to perform some actions otherwise forbidden by copyright, although this does not mean that the user must pay a compensation if they are exercises, e.g. levies on digital recording equipment and media. These exceptions to copyright should be considered as end-user privileges and not rights. However, some of them are referred to as rights, e.g. the right to quote. Moreover, they are modelled as rights in this conceptualisation in order to build a more homogeneous model."@en ;
   rdfs:label "Copyright Exceptions"@en ;
-  rdfs:subClassOf cro:Copyright ;
+  rdfs:subClassOf rights:Copyright ;
 .
-cro:DisclosureRight
-  rdf:type owl:Class ;
+rights:DisclosureRight
+  a owl:Class ;
   rdfs:comment "The right to disclose the work."@en ;
   rdfs:label "Dissemination Right"@en ;
-  rdfs:subClassOf cro:MoralRights ;
+  rdfs:subClassOf rights:MoralRights ;
 .
-cro:DistributionRight
-  rdf:type owl:Class ;
+rights:DistributionRight
+  a owl:Class ;
   rdfs:comment "It regulates actions geared to distribute previously made copies incorporated in tangible articles. The ownership of the corresponding physical support can be transferred permanently, i.e. the distribute act is a sale, or just temporally, i.e. a rent if there is a significant economic compensation or a loan if not."@en ;
   rdfs:label "Distribution Right"@en ;
-  rdfs:subClassOf cro:EconomicRights ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:Instance ;
-      owl:onProperty cro:what ;
-    ] ;
+  rdfs:subClassOf rights:EconomicRights ;
 .
-cro:EconomicRights
-  rdf:type owl:Class ;
-  rdfs:comment "The economic rights are related to the productive and commercial aspects of copyright."@en ;
+rights:EconomicRights
+  a owl:Class ;
+  rdfs:comment "The economic rights are related to the productive and commercial aspects of copyright, its exploitation."@en ;
   rdfs:label "Economic Rights"@en ;
-  rdfs:subClassOf cro:Copyright ;
+  rdfs:subClassOf rights:Copyright ;
 .
-cro:EducationOrResearchException
-  rdf:type owl:Class ;
+rights:EducationOrResearchException
+  a owl:Class ;
   rdfs:comment "To illustrate for teaching or research, uses for reproduction and communication to the public in educational institutions, libraries and archives."@en ;
   rdfs:label "Education or Research Exception"@en ;
-  rdfs:subClassOf cro:CopyrightExceptions ;
+  rdfs:subClassOf rights:CopyrightExceptions ;
 .
-cro:FixationRight
-  rdf:type owl:Class ;
+rights:FixationRight
+  a owl:Class ;
   rdfs:comment "It regulates the materialisation of a Performance into an object that constitutes a Fixation. Common fixations are motion pictures and sound recordings, which are governed by the corresponding Sound Recording Right and Motion Picture Right."@en ;
   rdfs:label "Fixation Right"@en ;
-  rdfs:subClassOf cro:EconomicRights ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:Performance ;
-      owl:onProperty cro:what ;
-    ] ;
+  rdfs:subClassOf rights:EconomicRights ;
 .
-cro:ImportationRight
-  rdf:type owl:Class ;
+rights:ImportationRight
+  a owl:Class ;
   rdfs:comment "Some copyright laws include a right to control importation of copies as a means of preventing erosion of the principle of territoriality of copyright."@en ;
   rdfs:label "Importation Right"@en ;
-  rdfs:subClassOf cro:DistributionRight ;
+  rdfs:subClassOf rights:DistributionRight ;
 .
-cro:IntegrityRight
-  rdf:type owl:Class ;
+rights:IntegrityRight
+  a owl:Class ;
   rdfs:comment "The right to object to any distortion, mutilation or other modification of, or other derogatory action in relation to, the work which would be prejudicial to the author's honour or reputation."@en ;
   rdfs:label "Integrity Right"@en ;
-  rdfs:subClassOf cro:MoralRights ;
+  rdfs:subClassOf rights:MoralRights ;
 .
-cro:MakingAvailableRight
-  rdf:type owl:Class ;
+rights:MakingAvailableRight
+  a owl:Class ;
   rdfs:label "Making Available Right"@en ;
-  rdfs:subClassOf cro:CommunicationRight ;
+  rdfs:subClassOf rights:CommunicationRight ;
 .
-cro:MoralRights
-  rdf:type owl:Class ;
+rights:MoralRights
+  a owl:Class ;
   rdfs:comment "Moral rights are always held by the creator and cannot be commercially exploited. They are not present in all legal systems. However, WIPO treaties are promoting some of them in order to improve worldwide copyright law harmonisation."@en ;
   rdfs:label "Moral Rights"@en ;
-  rdfs:subClassOf cro:Copyright ;
+  rdfs:subClassOf rights:Copyright ;
 .
-cro:MotionPictureRight
-  rdf:type owl:Class ;
+rights:MotionPictureRight
+  a owl:Class ;
   rdfs:label "Motion Picture Right"@en ;
-  rdfs:subClassOf cro:FixationRight ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:MotionPicture ;
-      owl:onProperty cro:result ;
-    ] ;
+  rdfs:subClassOf rights:FixationRight ;
 .
-cro:OfficialActException
-  rdf:type owl:Class ;
+rights:OfficialActException
+  a owl:Class ;
   rdfs:comment "To use for certain administrative, judicial or security proceedings and religious or official ceremonies."@en ;
   rdfs:label "Official Act Exception"@en ;
-  rdfs:subClassOf cro:CopyrightExceptions ;
+  rdfs:subClassOf rights:CopyrightExceptions ;
 .
-cro:ParodyException
-  rdf:type owl:Class ;
+rights:ParodyException
+  a owl:Class ;
   rdfs:comment "To use for parody and caricature."@en ;
   rdfs:label "Parody Exception"@en ;
-  rdfs:subClassOf cro:CopyrightExceptions ;
+  rdfs:subClassOf rights:CopyrightExceptions ;
 .
-cro:PerformersRights
-  rdf:type owl:Class ;
+rights:PerformersRights
+  a owl:Class ;
   rdfs:comment "Performers have exclusive Fixation, Communication, Reproduction, Public Performance and Distribution Rights over their performances. These rights, when the performance is of a copyrighted work, will be in addition to the rights of copyright owners with respect to the performance and subsequent exploitation of the performance."@en ;
   rdfs:label "Performers Rights"@en ;
-  rdfs:subClassOf cro:RelatedRights ;
+  rdfs:subClassOf rights:RelatedRights ;
 .
-cro:PrivateCopyException
-  rdf:type owl:Class ;
+rights:PrivateCopyException
+  a owl:Class ;
   rdfs:comment "To reproduce a work exclusively for the personal and private use of the person who makes the reproduction, e.g. a backup. Includes copies for time-shifting (e.g. recording a broadcast to watch it later in private), space-shifting or format-shifting (e.g. copy a CD to play it in a mobile phone exclusively for private use)."@en ;
   rdfs:label "Private Copy Exception"@en ;
-  rdfs:subClassOf cro:CopyrightExceptions ;
+  rdfs:subClassOf rights:CopyrightExceptions ;
 .
-cro:ProducersRights
-  rdf:type owl:Class ;
+rights:ProducersRights
+  a owl:Class ;
   rdfs:comment "Producers have exclusive Reproduction Right over their fixations and exclusive Distribution Right over the resulting copies. As before, these rights will be in addition to the rights of copyright owners."@en ;
   rdfs:label "Producers Rights"@en ;
-  rdfs:subClassOf cro:RelatedRights ;
+  rdfs:subClassOf rights:RelatedRights ;
 .
-cro:PublicPerformanceRight
-  rdf:type owl:Class ;
+rights:PublicPerformanceRight
+  a owl:Class ;
   rdfs:comment "It regulates Performances of works when they are made in public, i.e. before an audience."@en ;
   rdfs:label "Public Performance Right"@en ;
-  rdfs:subClassOf cro:EconomicRights ;
+  rdfs:subClassOf rights:EconomicRights ;
 .
-cro:QuotationException
-  rdf:type owl:Class ;
+rights:QuotationException
+  a owl:Class ;
   rdfs:comment "The making of quotations from a protected work, provided that the source is mentioned and that the extent of the quotation is compatible with fair practice."@en ;
   rdfs:label "Quotation Exception"@en ;
-  rdfs:subClassOf cro:CopyrightExceptions ;
+  rdfs:subClassOf rights:CopyrightExceptions ;
 .
-cro:RelatedRights
-  rdf:type owl:Class ;
+rights:RelatedRights
+  a owl:Class ;
   rdfs:comment "There are the rights of other persons also involved in the exploitation of works. Performers, producers and broadcasters make a significant contribution in order to make works reach end-users. Their contribution is also protected by some rights related to copyright, the Related Rights or Neighbouring Rights."@en ;
   rdfs:label "Related Rights"@en ;
-  rdfs:subClassOf cro:Copyright ;
+  rdfs:subClassOf rights:Copyright ;
 .
-cro:RentalRight
-  rdf:type owl:Class ;
+rights:RentalRight
+  a owl:Class ;
   rdfs:comment "The right to authorize rental of copies of works."@en ;
   rdfs:label "Rental Right"@en ;
-  rdfs:subClassOf cro:DistributionRight ;
+  rdfs:subClassOf rights:DistributionRight ;
 .
-cro:ReportingException
-  rdf:type owl:Class ;
+rights:ReportingException
+  a owl:Class ;
   rdfs:comment "Uses by the press to report about current events."@en ;
   rdfs:label "Reporting Exception"@en ;
-  rdfs:subClassOf cro:CopyrightExceptions ;
+  rdfs:subClassOf rights:CopyrightExceptions ;
 .
-cro:ReproductionRight
-  rdf:type owl:Class ;
+rights:ReproductionRight
+  a owl:Class ;
   rdfs:comment "It regulates actions that produce replicas of a given object, i.e. Instances. Examples of reproduction are the mass production of CD copies from an audio recording master, to scan a book in order to produce a digitalisation of it or to download a digital file into the local hard disk."@en ;
   rdfs:label "Reproduction Right"@en ;
-  rdfs:subClassOf cro:EconomicRights ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:Instance ;
-      owl:onProperty cro:result ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom schema:CreativeWork ;
-      owl:onProperty cro:what ;
-    ] ;
+  rdfs:subClassOf rights:EconomicRights ;
 .
-cro:SoundRecordingRight
-  rdf:type owl:Class ;
+rights:SoundRecordingRight
+  a owl:Class ;
   rdfs:label "Sound Recording Right"@en ;
-  rdfs:subClassOf cro:FixationRight ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:SoundRecording ;
-      owl:onProperty cro:result ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom [
-          rdf:type owl:Class ;
-          owl:unionOf (
-              cro:Performance
-              cro:Communication
-            ) ;
-        ] ;
-      owl:onProperty cro:what ;
-    ] ;
+  rdfs:subClassOf rights:FixationRight ;
 .
-cro:TemporaryReproductionException
-  rdf:type owl:Class ;
+rights:SynchronizationRight
+  a owl:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Synchronization Right"@en ;
+  rdfs:subClassOf rights:TransformationRight ;
+.
+rights:TemporaryReproductionException
+  a owl:Class ;
   rdfs:comment "To produce ephemeral reproductions required in order to facilitate some technological processes geared towards work usage, e.g. internet caches."@en ;
   rdfs:label "Temporary Reproduction Exception"@en ;
-  rdfs:subClassOf cro:CopyrightExceptions ;
+  rdfs:subClassOf rights:CopyrightExceptions ;
 .
-cro:TransformationRight
-  rdf:type owl:Class ;
+rights:TransformationRight
+  a owl:Class ;
   rdfs:comment "It regulates actions that generate new works from previously existing ones. The results of this kind of actions are considered new works, and not mere reproductions, because they contribute something new, i.e. they are original as detailed in the Originality section. This right is concretised into the Adaptation Right and the Translation Right. The former creates a new work of a different type than the original one, e.g. a film from a novel. The latter generates a work of the same type but in a different language."@en ;
   rdfs:label "Transformation Right"@en ;
-  rdfs:subClassOf cro:EconomicRights ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:Work ;
-      owl:onProperty cro:result ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:Work ;
-      owl:onProperty cro:what ;
-    ] ;
+  rdfs:subClassOf rights:EconomicRights ;
 .
-cro:TranslationRight
-  rdf:type owl:Class ;
-  rdfs:comment ""^^xsd:string ;
+rights:TranslationRight
+  a owl:Class ;
+  rdfs:comment "" ;
   rdfs:label "Translation Right"@en ;
-  rdfs:subClassOf cro:TransformationRight ;
+  rdfs:subClassOf rights:TransformationRight ;
 .
-cro:WithdrawalRight
-  rdf:type owl:Class ;
+rights:WithdrawalRight
+  a owl:Class ;
   rdfs:comment "The right to withdraw the work."@en ;
   rdfs:label "Withdrawal Right"@en ;
-  rdfs:subClassOf cro:MoralRights ;
+  rdfs:subClassOf rights:MoralRights ;
 .
