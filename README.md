@@ -11,8 +11,8 @@ The copyright domain is quite complex, so the **Copyright Ontology** attempts it
 First, the objective is to represent the most primitive part, the **Creation Model**, the different shapes creations take along their lifecycle. Second the **Action Model**, the available actions that move creations along their life cycle. Finally, the **Rights Model**, which constraints what actions are favoured or restricted based on different legal regimes:
 
 1. [**Creation Model**](CreationModel) - different shapes of copyright creations along their lifecycle.
-2. [**Actions Model**](ActionsModel) - copyright actions moving creations along their lifecycle.
 3. [**Rights Model**](RightsModel) - legal constructs regulating what actions are favoured or restricted. Different legal systems can be represented, from generic rights frameworks geared towards worldwide harmonisation like those proposed by the **World Intellectual Property Organization** ([WIPO](http://www.wipo.int)) to specific rights in a particular legal regime like the **U.S. Digital Performance Right in Sound Recordings**
+3. [**Actions Model**](ActionsModel) - copyright actions moving creations along their lifecycle.
 
 Figure 1 shows and overview of how some of the concepts in these 3 models relate.
 
