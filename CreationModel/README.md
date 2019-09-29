@@ -127,13 +127,13 @@ To facilitate the adoption of the Copyright Ontology, it is rooted in the most u
     -   **Manifestation**: the materialisation of a work in a concrete medium, a tangible or digital object.
     -   **Recording**: the materialisation of a performance in a concrete medium, a tangible or digital object.
         -   Includes **Sound Recording** and **Audiovisual Recording**.
-    -   **Instance**: the reproduction, copy, of a manifestation, a recording or another instance.
+    -   **Instance**: the reproduction, copy, of a manifestation, a recording or another instance. It might have a physical support or not, like a digital object.
 - *schema:Event*
 
     -   **Performance**: the expression in time of a work. Performers or technical methods might be involved in the process.
         -   **Improvisation**: the expression in time of a work that has not been previously materialised in a manifestation.
-    -   **Communication**: the transmission of a work among places at a given time. It is a process performed when the public is not present at the place and or time where the communication originates. It includes broadcasts, i.e. one to many, but also communications from a place and at a time individually chosen, like Internet streaming.
-        -   Live **Communication**: the direct communication of a performance without a mediating non-ephemeral recording.
+    -   **Communication**: the transmission of a work among places at a given time. It is a process performed when the public is not present at the place and or time where the communication originates. It includes *schema:BroadcastEvent*, i.e. one to many, but also *schema:OnDemandEvent*, communications from a place and at a time individually chosen, like Internet streaming.
+        -   **Live Communication**: the direct communication of a performance without a mediating non-ephemeral recording.
 
 The previous concepts are the building blocks of the Copyright Ontology Creation Model. However, to capture creation value chains, the model should also include how these different creation forms relate.
 
@@ -191,31 +191,31 @@ This is the serialisation of that model using [Turtle](https://www.w3.org/TR/tur
 
 ```turtle
 @prefix : <http://rhizomik.net/ontologies/copyrightonto/creationmodel-sample.ttl#> .
-@prefix cro: <http://rhizomik.net/ontologies/copyrightonto#> .
+@prefix creation: <http://rhizomik.net/ontologies/copyrightonto-creationmodel.owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 :literary_work
-  rdf:type cro:Work ;
+  rdf:type creation:Work ;
 .
 :serial
-  rdf:type cro:Work ;
-  cro:isDerivationOf :literary_work ;
+  rdf:type creation:Work ;
+  creation:isDerivationOf :literary_work ;
 .
 :script
-  rdf:type cro:Manifestation ;
-  cro:hasPerformance :performance ;
-  cro:isManifestationOf :serial ;
+  rdf:type creation:Manifestation ;
+  creation:hasPerformance :performance ;
+  creation:isManifestationOf :serial ;
 .
 :performance
-  rdf:type cro:Performance ;
-  cro:hasRecording :motion_picture ;
+  rdf:type creation:Performance ;
+  creation:hasRecording :motion_picture ;
 .
 :motion_picture
-  rdf:type cro:AudiovisualRecording ;
-  cro:hasCommunication :broadcast ;
+  rdf:type creation:AudiovisualRecording ;
+  creation:hasCommunication :broadcast ;
 .
 :broadcast
-  rdf:type cro:Communication ;
+  rdf:type creation:Communication ;
 .
 ```
 
@@ -230,42 +230,42 @@ And this is the same model serialized using [JSON-LD](https://json-ld.org):
   "@graph": [
     {
       "@id": "sample:literary_work",
-      "@type": "cro:Work"
+      "@type": "creation:Work"
     },
     {
       "@id": "sample:serial",
-      "@type": "cro:Work",
-      "cro:isDerivationOf": {
+      "@type": "creation:Work",
+      "creation:isDerivationOf": {
         "@id": "sample:literary_work"
       }
     },
     {
       "@id": "sample:script",
-      "@type": "cro:Manifestation",
-      "cro:isManifestationOf": {
+      "@type": "creation:Manifestation",
+      "creation:isManifestationOf": {
         "@id": "sample:serial"
       },
-      "cro:hasPerformance": {
+      "creation:hasPerformance": {
         "@id": "sample:performance"
       }
     },
     {
       "@id": "sample:performance",
-      "@type": "cro:Performance",
-      "cro:hasRecording": {
+      "@type": "creation:Performance",
+      "creation:hasRecording": {
         "@id": "sample:motion_picture"
       }
     },
     {
       "@id": "sample:motion_picture",
-      "@type": "cro:AudiovisualRecording",
-      "cro:hasCommunication": {
+      "@type": "creation:AudiovisualRecording",
+      "creation:hasCommunication": {
         "@id": "sample:broadcast"
       }
     },
     {
       "@id": "sample:broadcast",
-      "@type": "cro:Communication"
+      "@type": "creation:Communication"
     }
   ]
 }

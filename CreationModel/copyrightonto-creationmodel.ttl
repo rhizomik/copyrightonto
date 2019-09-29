@@ -1,4 +1,8 @@
-@prefix cro: <http://rhizomik.net/ontologies/copyrightonto#> .
+# baseURI: http://rhizomik.net/ontologies/copyrightonto-creationmodel.owl
+# prefix: creation
+
+@prefix : <http://rhizomik.net/ontologies/copyrightonto-creationmodel.owl#> .
+@prefix creation: <http://rhizomik.net/ontologies/copyrightonto-creationmodel.owl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,255 +11,261 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://rhizomik.net/ontologies/copyrightonto>
-  rdf:type owl:Ontology ;
+<http://rhizomik.net/ontologies/copyrightonto-creationmodel.owl>
+  a owl:Ontology ;
   dc:creator <http://rhizomik.net/~roberto/> ;
-  dc:date "2017-10-23"^^xsd:date ;
-  dc:description "Copyright Ontology, http://rhizomik.net/ontologies/copyrightonto"@en ;
+  dc:date "2019-09-02"^^xsd:date ;
+  dc:description "Copyright Ontology - Creation Model, http://rhizomik.net/ontologies/copyrightonto"@en ;
   dc:license <http://creativecommons.org/licenses/by-sa/4.0/> ;
-  vann:preferredNamespacePrefix "cro" ;
-  rdfs:label "Copyright Ontology"@en ;
+  vann:preferredNamespacePrefix "creation" ;
+  rdfs:label "Creation Model"@en ;
 .
-cro:AudiovisualRecording
-  rdf:type owl:Class ;
+creation:AudiovisualRecording
+  a owl:Class ;
   rdfs:label "Audiovisual Recording"@en ;
-  rdfs:subClassOf cro:Recording ;
+  rdfs:subClassOf creation:Recording ;
 .
-cro:Communication
-  rdf:type owl:Class ;
+creation:Communication
+  a owl:Class ;
   rdfs:comment "The transmission of a work among places at a given time. It is a process performed when the public is not present at the place and or time where the Communication originates. It includes broadcasts, i.e. one to many, but also communications from a place and at a time individually chosen. Examples: a radio broadcast of a sound recording of The Magic Flute or an Internet streaming of the film Les Misérables."@en ;
   rdfs:label "Communication"@en ;
   rdfs:subClassOf schema:Event ;
 .
-cro:Improvisation
-  rdf:type owl:Class ;
+creation:Improvisation
+  a owl:Class ;
   rdfs:comment "The expression in time of a work, which has not been previously materialised in a manifestation, before an audience. Performers or technical methods might be involved in the process. Examples: to play some improvised music in a concert."@en ;
   rdfs:label "Improvisation"@en ;
-  rdfs:subClassOf cro:Performance ;
+  rdfs:subClassOf creation:Performance ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:Work ;
-      owl:onProperty cro:isPerformanceOf ;
+      a owl:Restriction ;
+      owl:allValuesFrom creation:Work ;
+      owl:onProperty creation:isPerformanceOf ;
     ] ;
 .
-cro:Instance
-  rdf:type owl:Class ;
-  rdfs:comment "A copy of a creation object produced for commersialisation, a product. International identification schemes for manifestations: EAN13 (European Article Number) or UPC (Universal Product Code). Examples: a CD of The Magic Flute or a DVD of Les Misérables."@en ;
+creation:Instance
+  a owl:Class ;
+  rdfs:comment "A copy of a creation object produced for commersialisation, a product. International identification schemes for manifestations: EAN13 (European Article Number) or UPC (Universal Product Code). Examples: a CD of The Magic Flute or a DVD of Les Misérables. It also includes replicas without a physical support, like digital object."@en ;
   rdfs:label "Instance"@en ;
   rdfs:subClassOf schema:CreativeWork ;
 .
-cro:LiveCommunication
-  rdf:type owl:Class ;
+creation:LiveCommunication
+  a owl:Class ;
   rdfs:label "Live Communication"@en ;
-  rdfs:subClassOf cro:Communication ;
+  rdfs:subClassOf creation:Communication ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:Performance ;
-      owl:onProperty cro:isCommunicationOf ;
+      a owl:Restriction ;
+      owl:allValuesFrom creation:Performance ;
+      owl:onProperty creation:isCommunicationOf ;
     ] ;
 .
-cro:Manifestation
-  rdf:type owl:Class ;
+creation:Manifestation
+  a owl:Class ;
   rdfs:comment "The materialisation of a Work in a concrete medium, i.e. a tangible or digital object. International identification schemes for manifestations: ISBN (International Standard Book Number) for books or ISMN (International Standard Music Number) for printed music. Examples: the printed scores of The Magic Flute or the editions of Les Misérables."@en ;
   rdfs:label "Manifestation"@en ;
   rdfs:subClassOf schema:CreativeWork ;
 .
-cro:Performance
-  rdf:type owl:Class ;
+creation:Performance
+  a owl:Class ;
   rdfs:comment "The expression in time of a manifestation of a work before an audience. Performers or technical methods might be involved in the process. Examples: the scenic play of The Magic Flute opera or a screen play of any of Les Misérables films."@en ;
   rdfs:label "Performance"@en ;
   rdfs:subClassOf schema:Event ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:LiveCommunication ;
-      owl:onProperty cro:hasCommunication ;
+      a owl:Restriction ;
+      owl:allValuesFrom creation:LiveCommunication ;
+      owl:onProperty creation:hasCommunication ;
     ] ;
 .
-cro:Recording
-  rdf:type owl:Class ;
+creation:Recording
+  a owl:Class ;
   rdfs:comment "The materialisation of a performance in a tangible of digital object. International identification schemes for manifestations: ISRC (International Standard Recording Code) for audio and video recordings or ISAN (International Standard Audiovisual Number) for audiovisual works. Examples: a sound recording of The Magic Flute opera or any motion picture of Les Misérables."@en ;
   rdfs:label "Recording"@en ;
   rdfs:subClassOf schema:CreativeWork ;
 .
-cro:SoundRecording
-  rdf:type owl:Class ;
+creation:SoundRecording
+  a owl:Class ;
   rdfs:label "Sound Recording"@en ;
-  rdfs:subClassOf cro:Recording ;
+  rdfs:subClassOf creation:Recording ;
 .
-cro:Work
-  rdf:type owl:Class ;
+creation:Work
+  a owl:Class ;
   rdfs:comment "The socially shared concept that captures the characteristics that allow the identification of the original creation among all its manifestations. International identification schemes for works: ISTC (International Standard Text Code) for textual works, ISSN (International Standard Serial Number) for serial publications or ISWC (International Standard Musical Work Code) for musical and literary works. Examples: Mozart's The Magic Flute or Victor Hugo's Les Misérables."@en ;
   rdfs:label "Work"@en ;
   rdfs:subClassOf schema:Intangible ;
   rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:allValuesFrom cro:Improvisation ;
-      owl:onProperty cro:hasPerformance ;
+      a owl:Restriction ;
+      owl:allValuesFrom creation:Improvisation ;
+      owl:onProperty creation:hasPerformance ;
     ] ;
 .
-cro:creationModelProperty
-  rdf:type owl:ObjectProperty ;
+creation:creationModelProperty
+  a owl:ObjectProperty ;
 .
-cro:hasCommunication
-  rdf:type owl:InverseFunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
+creation:hasCommunication
+  a owl:InverseFunctionalProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:unionOf (
-          cro:Performance
-          cro:Recording
-          cro:Manifestation
+          creation:Performance
+          creation:Recording
+          creation:Manifestation
         ) ;
     ] ;
   rdfs:label "has communication"@en ;
-  rdfs:range cro:Communication ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
-  owl:inverseOf cro:isCommunicationOf ;
+  rdfs:range creation:Communication ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
+  owl:inverseOf creation:isCommunicationOf ;
 .
-cro:hasDerivation
-  rdf:type owl:ObjectProperty ;
-  rdf:type owl:TransitiveProperty ;
-  rdfs:comment ""^^xsd:string ;
-  rdfs:domain cro:Work ;
+creation:hasDerivation
+  a owl:ObjectProperty ;
+  a owl:TransitiveProperty ;
+  rdfs:comment "" ;
+  rdfs:domain creation:Work ;
   rdfs:label "has derivation"@en ;
-  rdfs:range cro:Work ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
-  owl:inverseOf cro:isDerivationOf ;
+  rdfs:range creation:Work ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
+  owl:inverseOf creation:isDerivationOf ;
 .
-cro:hasInstance
-  rdf:type owl:InverseFunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
+creation:hasInstance
+  a owl:InverseFunctionalProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:unionOf (
-          cro:Manifestation
-          cro:Recording
+          creation:Manifestation
+          creation:Recording
         ) ;
     ] ;
   rdfs:label "has instance"@en ;
-  rdfs:range cro:Instance ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
-  owl:inverseOf cro:isInstanceOf ;
+  rdfs:range creation:Instance ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
+  owl:inverseOf creation:isInstanceOf ;
 .
-cro:hasManifestation
-  rdf:type owl:InverseFunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment ""^^xsd:string ;
-  rdfs:domain cro:Work ;
+creation:hasManifestation
+  a owl:InverseFunctionalProperty ;
+  a owl:ObjectProperty ;
+  rdfs:comment "" ;
+  rdfs:domain creation:Work ;
   rdfs:label "has manifestation"@en ;
-  rdfs:range cro:Manifestation ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
-  owl:inverseOf cro:isManifestationOf ;
+  rdfs:range creation:Manifestation ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
+  owl:inverseOf creation:isManifestationOf ;
 .
-cro:hasPerformance
-  rdf:type owl:InverseFunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
+creation:hasPerformance
+  a owl:InverseFunctionalProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:unionOf (
-          cro:Manifestation
-          cro:Work
+          creation:Manifestation
+          creation:Work
         ) ;
     ] ;
   rdfs:label "has performance"@en ;
-  rdfs:range cro:Performance ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
-  owl:inverseOf cro:isPerformanceOf ;
+  rdfs:range creation:Performance ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
+  owl:inverseOf creation:isPerformanceOf ;
 .
-cro:hasRecording
-  rdf:type owl:InverseFunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
+creation:hasRecording
+  a owl:InverseFunctionalProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:unionOf (
-          cro:Communication
-          cro:Performance
+          creation:Communication
+          creation:Performance
         ) ;
     ] ;
   rdfs:label "has recording"@en ;
-  rdfs:range cro:Recording ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
-  owl:inverseOf cro:isRecordingOf ;
+  rdfs:range creation:Recording ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
+  owl:inverseOf creation:isRecordingOf ;
 .
-cro:isCommunicationOf
-  rdf:type owl:FunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain cro:Communication ;
+creation:isCommunicationOf
+  a owl:FunctionalProperty ;
+  a owl:ObjectProperty ;
+  rdfs:domain creation:Communication ;
   rdfs:label "is communication of"@en ;
   rdfs:range [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:unionOf (
-          cro:Performance
-          cro:Recording
-          cro:Manifestation
+          creation:Performance
+          creation:Recording
+          creation:Manifestation
         ) ;
     ] ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
 .
-cro:isDerivationOf
-  rdf:type owl:ObjectProperty ;
-  rdf:type owl:TransitiveProperty ;
-  rdfs:domain cro:Work ;
+creation:isDerivationOf
+  a owl:ObjectProperty ;
+  a owl:TransitiveProperty ;
+  rdfs:domain creation:Work ;
   rdfs:label "is derivation of"@en ;
-  rdfs:range cro:Work ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
+  rdfs:range creation:Work ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
 .
-cro:isInstanceOf
-  rdf:type owl:FunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain cro:Instance ;
+creation:isInstanceOf
+  a owl:FunctionalProperty ;
+  a owl:ObjectProperty ;
+  rdfs:domain creation:Instance ;
   rdfs:label "is instance of"@en ;
   rdfs:range [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:unionOf (
-          cro:Manifestation
-          cro:Recording
+          creation:Manifestation
+          creation:Recording
         ) ;
     ] ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
 .
-cro:isManifestationOf
-  rdf:type owl:FunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain cro:Manifestation ;
+creation:isManifestationOf
+  a owl:FunctionalProperty ;
+  a owl:ObjectProperty ;
+  rdfs:domain creation:Manifestation ;
   rdfs:label "is manifestation of"@en ;
-  rdfs:range cro:Work ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
+  rdfs:range creation:Work ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
 .
-cro:isPerformanceOf
-  rdf:type owl:FunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain cro:Performance ;
+creation:isPerformanceOf
+  a owl:FunctionalProperty ;
+  a owl:ObjectProperty ;
+  rdfs:domain creation:Performance ;
   rdfs:label "is performance of"@en ;
   rdfs:range [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:unionOf (
-          cro:Manifestation
-          cro:Work
+          creation:Manifestation
+          creation:Work
         ) ;
     ] ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
 .
-cro:isRecordingOf
-  rdf:type owl:FunctionalProperty ;
-  rdf:type owl:ObjectProperty ;
-  rdfs:domain cro:Recording ;
+creation:isRecordingOf
+  a owl:FunctionalProperty ;
+  a owl:ObjectProperty ;
+  rdfs:domain creation:Recording ;
   rdfs:label "is recording of"@en ;
   rdfs:range [
-      rdf:type owl:Class ;
+      a owl:Class ;
       owl:unionOf (
-          cro:Communication
-          cro:Performance
+          creation:Communication
+          creation:Performance
         ) ;
     ] ;
-  rdfs:subPropertyOf cro:creationModelProperty ;
+  rdfs:subPropertyOf creation:creationModelProperty ;
+.
+schema:BroadcastEvent
+  rdfs:subClassOf creation:Communication ;
 .
 schema:CreativeWork
-  rdf:type owl:Class ;
+  a owl:Class ;
 .
 schema:Event
-  rdf:type owl:Class ;
+  a owl:Class ;
 .
 schema:Intangible
-  rdf:type owl:Class ;
+  a owl:Class ;
+.
+schema:OnDemandEvent
+  rdfs:subClassOf creation:Communication ;
 .
