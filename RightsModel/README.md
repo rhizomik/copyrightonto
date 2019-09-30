@@ -1,5 +1,9 @@
 # Rights Model
 
+| Downloads                                                    | Documentation                                                |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-rightsmodel.ttl) | [![Documentation](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/rightsmodel/) [![Visualization](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl) |
+
 **Table of Contents**
 
 - [Overview](#overview)
@@ -18,19 +22,15 @@
 
 ## Overview
 
-Once we have established the [**Creation Model**](../CreationModel) and the [**Actions Model**](../ActionsModel), the foundations for modelling creations' value chains are laid and it is time to capture how they are regulated. This is done by the **Rights Models** part of the Copyright Ontology described in this document, which capture the copyright legal aspects.
+Once we have established the [**Creation Model**](../CreationModel), it is time to capture how it is regulated. This is done by the **Rights Models** part of the Copyright Ontology described in this document, which capture the copyright legal aspects.
 
 There are many legal systems worldwide and the objective of the Copyright Ontology is to provide the mechanisms to model them. As part of this effort, and to test and illustrate the capabilities of the Rights Model, we have also generated some **Rights Models for specific legal frameworks**. 
 
 The most relevant one, as it helps testing the scope of the whole Copyright Ontology, is the legal framework proposed by the **World Intellectual Property Organisation** [(WIPO, 2004)](#references) described in the next section. 
 
-Moreover, and as work in progress, the idea is to also model **country specific** legal systems or even the rights governing **particular industries**. For instance the music or the film industries in the USA, which are also described in subsequent sections.
+The idea is to also be capable of modelling **country specific** legal systems or even the rights governing **particular industries**. For instance the music or the film industries in the USA. This is possible thanks to the last part of the Copyright Ontology, the [**Actions Model**](../ActionsModel), which establishes a common foundation based on actions involving copyrighted content. These actions intend to be generic and the target of the restrictions defined through rights.
 
 ## WIPO Rights Model
-
-| Downloads                                                    | Documentation                                                |
-| :----------------------------------------------------------- | :----------------------------------------------------------- |
-| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-rightsmodel.ttl) [![DownloadRDFXML](https://img.shields.io/badge/style-RDF/XML-orange.svg?style=flat&label=Download)](http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl) | [![Documentation](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/rightsmodel/) [![Visualization](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl) |
 
 Though there is not a global copyright framework that uniformly applies worldwide, the World Intellectual Property Organisation (WIPO) has arranged [many treaties](http://www.wipo.int/treaties/en/) to harmonise the plethora of country-level regulations into a unified system that facilitates copyright protection and management across borders. For instance, the [Berne Convention for the Protection of Literary and Artistic Works](http://www.wipo.int/treaties/en/ip/berne/) (1886) or the [Beijing Treaty on Audiovisual Performances](http://www.wipo.int/treaties/en/ip/beijing/) (2012)
 
@@ -108,21 +108,15 @@ The **Rights Model** part of the **Copyright Ontology** is implemented using the
 
 - Copyright Ontology Rights Model: [**copyrightonto-rightsmodel.ttl**](copyrightonto-rightsmodel.ttl)
 
-The ontology can be downloaded from the previous link and converted to other RDF/OWL formats using services like Anything To Triples ([Any23](http://any23-vm2.apache.org/)), for instance to [**RDF/XML**](http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl)
+The ontology can be downloaded from the previous link and converted to other RDF/OWL formats using services like Anything To Triples ([Any23](http://any23-vm2.apache.org/))
 
-<ul> Copyright Ontology Rights Model:
-<a href="http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl" download="copyrightonto-rightsmodel.rdf">
-   <b>copyrightonto-rightsmodel.rdf</b>
-</a>
-</ul>
+There is also an ontology documentation generated from the RDF/OWL using [OntoSpy](http://lambdamusic.github.io/Ontospy/):
 
-There is also an ontology documentation generated from the RDF/OWL using [Ontodocs](https://github.com/lambdamusic/Ontodocs):
-
-- Copyright Ontology Rights Model: [**documentation**](https://rhizomik.github.io/copyrightonto/rights-model/)
+- Copyright Ontology Rights Model: [**documentation**](https://rhizomik.github.io/copyrightonto/rightsmodel/)
 
 It is also possible to get an overview of the ontology using visualisation services like [WebVOWL](http://vowl.visualdataweb.org/webvowl/):
 
-- Copyright Ontology Rights Model [**overview**](http://visualdataweb.de/webvowl/#iri=http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl)
+- Copyright Ontology Rights Model [**overview**](http://visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/rhizomik/copyrightonto/master/RightsModel/copyrightonto-rightsmodel.ttl)
 
 ## Related Work
 

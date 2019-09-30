@@ -3,7 +3,8 @@ Action Model
 
 | Downloads                                | Documentation                            |
 | :--------------------------------------- | :--------------------------------------- |
-| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-actionsmodel.ttl) [![DownloadRDFXML](https://img.shields.io/badge/style-RDF/XML-orange.svg?style=flat&label=Download)](http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/ActionsModel/copyrightonto-actionsmodel.ttl) | [![Documentation](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/actionsmodel/) [![Visualization](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/ActionsModel/copyrightonto-actionsmodel.ttl) |
+| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-actionsmodel.ttl) | [![Documentation](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/actionsmodel/) [![Visualization](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/rhizomik/copyrightonto/master/ActionsModel/copyrightonto-actionsmodel.ttl) |
+
 **Table of Contents**
 
 * [Overview](#overview)
@@ -13,6 +14,7 @@ Action Model
 * [Copyright Exceptions Actions](#copyright-exceptions-actions)
 * [Rights Management Actions](#rights-management-actions)
 * [End-User Actions](#end-user-actions)
+* [Implementation](#implementation)
 * [The Rest of the Copyright Ontology](#the-rest-of-the-copyright-ontology)
 * [References](#references)
 
@@ -193,9 +195,25 @@ schema:Action
 
 -->
 
+## Implementation
+
+The **Actions Model** part of the **Copyright Ontology** is implemented using the Resource Description Format ([RDF](https://www.w3.org/RDF/)) and the Web Ontology Language ([OWL](https://www.w3.org/OWL/)). It is available in [Turtle](https://www.w3.org/TR/turtle/) RDF serialization format:
+
+- Copyright Ontology Actions Model: [**copyrightonto-creationmodel.ttl**](copyrightonto-actionsmodel.ttl)
+
+The ontology can be downloaded from the previous link and converted to other RDF/OWL formats using services like Anything To Triples ([Any23](http://any23-vm2.apache.org/))
+
+There is also an ontology documentation generated from the RDF/OWL using [OntoSpy](http://lambdamusic.github.io/Ontospy/):
+
+- Copyright Ontology Creation Model: [**documentation**](https://rhizomik.github.io/copyrightonto/actionsmodel/)
+
+It is also possible to get an overview of the ontology using visualisation services like [WebVOWL](http://vowl.visualdataweb.org/webvowl/):
+
+- Copyright Ontology Creation Model [**overview**](http://visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/rhizomik/copyrightonto/master/ActionsModel/copyrightonto-actionsmodel.ttl)
+
 ## The Rest of the Copyright Ontology
 
- [**Creation Model**](../CreationModel) and [**Rights Model**](../RightsModel).
+This is the last part of the **Copyright Ontology**, complementing the [**Creation Model**](../CreationModel) and the [**Rights Model**](../RightsModel).
 
 ## References
 

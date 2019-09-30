@@ -3,7 +3,7 @@ Creation Model
 
 | Downloads                                | Documentation                            |
 | :--------------------------------------- | :--------------------------------------- |
-| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-creationmodel.ttl) [![DownloadRDFXML](https://img.shields.io/badge/style-RDF/XML-orange.svg?style=flat&label=Download)](http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) | [![Documentation](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/creationmodel/) [![Visualization](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) |
+| [![DownloadTurtle](https://img.shields.io/badge/style-Turtle-orange.svg?style=flat&label=Download)](copyrightonto-creationmodel.ttl) | [![Documentation](https://img.shields.io/badge/style-Ontodocs-blue.svg?style=flat&label=Documentation)](https://rhizomik.github.io/copyrightonto/creationmodel/) [![Visualization](https://img.shields.io/badge/style-VOWL-green.svg?style=flat&label=Visualization)](http://visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl) |
 
 **Table of Contents**
 
@@ -167,21 +167,15 @@ The **Creation Model** part of the **Copyright Ontology** is implemented using t
 
 - Copyright Ontology Creation Model: [**copyrightonto-creationmodel.ttl**](copyrightonto-creationmodel.ttl)
 
-The ontology can be downloaded from the previous link and converted to other RDF/OWL formats using services like Anything To Triples ([Any23](http://any23-vm2.apache.org/)), for instance to [**RDF/XML**](http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl)
+The ontology can be downloaded from the previous link and converted to other RDF/OWL formats using services like Anything To Triples ([Any23](http://any23-vm2.apache.org/))
 
-<ul> Copyright Ontology Creation Model:
-<a href="http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl" download="copyrightonto-creationmodel.rdf">
-   <b>copyrightonto-creationmodel.rdf</b>
-</a>
-</ul>
-
-There is also an ontology documentation generated from the RDF/OWL using [Ontodocs](https://github.com/lambdamusic/Ontodocs):
+There is also an ontology documentation generated from the RDF/OWL using [OntoSpy](http://lambdamusic.github.io/Ontospy/):
 
 - Copyright Ontology Creation Model: [**documentation**](https://rhizomik.github.io/copyrightonto/creationmodel/)
 
 It is also possible to get an overview of the ontology using visualisation services like [WebVOWL](http://vowl.visualdataweb.org/webvowl/):
 
-- Copyright Ontology Creation Model [**overview**](http://visualdataweb.de/webvowl/#iri=http://any23-vm2.apache.org/rdfxml/https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl)
+- Copyright Ontology Creation Model [**overview**](http://visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/rhizomik/copyrightonto/master/CreationModel/copyrightonto-creationmodel.ttl)
 
 #### Modelling Sample
 
