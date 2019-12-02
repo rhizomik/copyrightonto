@@ -1,6 +1,9 @@
 @startuml
 digraph CreationLifeCycleSample {
-  node [shape=box]; nodesep=0.5; ranksep=0.5
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  nodesep=0.5; ranksep=0.5
+
   "music work" -> "composition" -> "studio play" -> "master" -> "webcast"
   "composition" -> "sheet music print"
 

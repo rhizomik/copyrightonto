@@ -1,6 +1,8 @@
 @startuml
 digraph CreationLifeCycleSample {
-  node [shape=box]; rankdir=LR
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  rankdir=LR;
 
   "Copyright" -> "Economic Rights", "Moral Rights", "Related Rights";
 

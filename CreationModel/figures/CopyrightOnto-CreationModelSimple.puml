@@ -1,6 +1,8 @@
 @startuml
 digraph CopyrightOntoCreationModel {
-  node [shape=box]; rankdir=TB; compound=true; newrank=true;
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  rankdir=TB; compound=true; newrank=true;
 
   "Work":n -> "Work":n [label="is derivation of"];
   "Work":w -> "Manifestation":n [dir=back, label="is manifestation of"];

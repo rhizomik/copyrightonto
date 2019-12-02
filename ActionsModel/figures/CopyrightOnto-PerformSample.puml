@@ -1,6 +1,8 @@
 @startuml
 digraph CopyrightOntoPerformSample {
-  node [shape=box]; rankdir=TB; nodesep=0.8; compound=true; newrank=true;
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  rankdir=TB; nodesep=0.8; compound=true; newrank=true;
 
   "Glenn Gould" -> "Perform" [dir=back, label="agent"]
   "Piano" -> "Perform" [dir=back, label="instrument"]

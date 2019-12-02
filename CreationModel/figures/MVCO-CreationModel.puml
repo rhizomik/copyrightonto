@@ -1,7 +1,9 @@
 @startuml
 digraph MVCO_CreationModel {
-  node [shape=box]
-  rankdir=LR
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  rankdir=LR;
+
   "Work" -> "Manifestation" -> "Instance" -> "Copy"
   "Work" -> "Adaptation" -> "Manifestation"
 }

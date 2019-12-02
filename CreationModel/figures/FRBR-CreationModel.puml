@@ -1,11 +1,14 @@
 @startuml
 digraph FRBR_CreationModel {
-  node [shape=box]
-  rankdir=LR
-  {rank=same "Work" "Manifestation"}
-  {rank=same "Expression" "Item"}
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  rankdir=LR;
+
   "Work" -> "Expression" [label="is realized through"]
   "Expression" -> "Manifestation" [label="is embodied in"]
   "Manifestation" -> "Item" [label="is exemplified by"]
+
+  {rank=same "Work" "Manifestation"}
+  {rank=same "Expression" "Item"}
 }
 @enduml

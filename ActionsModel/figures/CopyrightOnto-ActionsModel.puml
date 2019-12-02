@@ -1,6 +1,8 @@
 @startuml
 digraph CopyrightOntoActionsModel {
-  node [shape=box]; rankdir=TB; nodesep=0.8; compound=true; newrank=true;
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  rankdir=TB; nodesep=0.8; compound=true; newrank=true;
 
   "Work":n -> "Work":n [label="Derive"];
   "Work":w -> "Manifestation":n [label="Manifest"];

@@ -1,6 +1,8 @@
 @startuml
 digraph CopyrightOntoPerformSample {
-  node [shape=box]; rankdir=TB; nodesep=0.8; compound=true; newrank=true;
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  rankdir=TB; nodesep=0.8; compound=true; newrank=true;
 
   "Work:\nBach's Goldberg Variations" -> "Work:\nRose's Goldbergs Variations" [dir=back, label="isDerivationOf"]
   "1983" -> "Manifest" [dir=back, label="pointInTime"]

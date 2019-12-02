@@ -1,6 +1,8 @@
 @startuml
 digraph CopyrightOnto_CreationLifeCycleSampleMusic {
-  node [shape=box]; compound=true; newrank=true;
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  compound=true; newrank=true;
 
   subgraph cluster_left { style=invis;
     "Work:\nmusic work";

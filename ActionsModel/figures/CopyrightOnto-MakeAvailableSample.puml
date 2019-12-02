@@ -1,0 +1,13 @@
+@startuml
+digraph CopyrightOntoMakeAvailableSample {
+  node [shape=box; fontname="Arial"];
+  edge [fontname="Arial"];
+  rankdir=TB; nodesep=0.8; compound=true; newrank=true;
+
+  "Daily Planet" -> "Clark Kent" [dir=back, label="member of"]
+  "Clark Kent" -> "Republish \n (MakeAvailable)" [dir=back, label="agent"]
+  "YouTube Videos _5l7vn1QdKM" -> "Republish \n (MakeAvailable)" [dir=back, label="object"]
+  "Republish \n (MakeAvailable)" -> "2019-11-15T09:52:32.294Z" [label="pointInTime"]
+  "Republish \n (MakeAvailable)" -> "Spain" [label="location"]
+}
+@enduml
