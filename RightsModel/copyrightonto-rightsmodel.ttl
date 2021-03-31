@@ -63,7 +63,7 @@ rights:CopyrightExceptions
 rights:DisclosureRight
   a owl:Class ;
   rdfs:comment "The right to disclose the work."@en ;
-  rdfs:label "Dissemination Right"@en ;
+  rdfs:label "Disclosure Right"@en ;
   rdfs:subClassOf rights:MoralRights ;
 .
 rights:DistributionRight
