@@ -1,31 +1,31 @@
-# baseURI: http://rhizomik.net/ontologies/copyrightonto.owl
-# imports: http://rhizomik.net/ontologies/copyrightonto-creationmodel.owl
-# imports: http://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl
+# baseURI: https://rhizomik.net/ontologies/copyrightonto.owl
+# imports: https://rhizomik.net/ontologies/copyrightonto-creationmodel.owl
+# imports: https://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl
 # imports: https://raw.githubusercontent.com/schemaorg/schemaorg/master/data/releases/3.9/schemaorg.owl
 # prefix: cro
 
-@prefix : <http://rhizomik.net/ontologies/copyrightonto.owl#> .
-@prefix creation: <http://rhizomik.net/ontologies/copyrightonto-creationmodel.owl#> .
-@prefix cro: <http://rhizomik.net/ontologies/copyrightonto.owl#> .
+@prefix : <https://rhizomik.net/ontologies/copyrightonto.owl#> .
+@prefix creation: <https://rhizomik.net/ontologies/copyrightonto-creationmodel.owl#> .
+@prefix cro: <https://rhizomik.net/ontologies/copyrightonto.owl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rights: <http://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl#> .
+@prefix rights: <https://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl#> .
 @prefix schema: <http://schema.org/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://rhizomik.net/ontologies/copyrightonto.owl>
+<https://rhizomik.net/ontologies/copyrightonto.owl>
   a owl:Ontology ;
-  dc:creator <http://rhizomik.net/~roberto/> ;
+  dc:creator <https://rhizomik.net/~roberto/> ;
   dc:date "2019-09-02"^^xsd:date ;
-  dc:description "Copyright Ontology, http://rhizomik.net/ontologies/copyrightonto"@en ;
+  dc:description "Copyright Ontology, https://rhizomik.net/ontologies/copyrightonto"@en ;
   dc:license <http://creativecommons.org/licenses/by-sa/4.0/> ;
   vann:preferredNamespacePrefix "cro" ;
   rdfs:label "Copyright Ontology"@en ;
-  owl:imports <http://rhizomik.net/ontologies/copyrightonto-creationmodel.owl> ;
-  owl:imports <http://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl> ;
+  owl:imports <https://rhizomik.net/ontologies/copyrightonto-creationmodel.owl> ;
+  owl:imports <https://rhizomik.net/ontologies/copyrightonto-rightsmodel.owl> ;
   owl:imports <https://raw.githubusercontent.com/schemaorg/schemaorg/master/data/releases/3.9/schemaorg.owl> ;
 .
 cro:Access
