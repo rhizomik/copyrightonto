@@ -85,7 +85,7 @@ Consequently, it is possible to model the **literary work** and its **serial** a
 
 ### MPEG-21 Media Value Chain Ontology
 
-A more detailed formalisation is the one provided by the ISO/IEC standard MPEG-21. One of the parts of this standard, concretely part 19, focuses on modelling media value chains using an ontology, the MPEG-21 Media Value Chain Ontology (MVCO) [(Delgado & Rodriguez-Doncel, 2009)](#references). 
+A more detailed formalisation is the one provided by the ISO/IEC standard MPEG-21. One of the parts of this standard, concretely part 19, focuses on modelling media value chains using an ontology, the MPEG-21 Media Value Chain Ontology (MVCO) [(Gauvin et al., 2010, Delgado & Rodriguez-Doncel, 2009)](#references). 
 
 The ontology formalises the following concepts, also shown in Figure 4: 
 
@@ -273,6 +273,8 @@ References
 ----------
 
 Delgado, J., & Rodriguez-Doncel, V. (2009). A Media Value Chain Ontology for MPEG-21. *IEEE MultiMedia*, *16*(4), 44–51. https://doi.org/10.1109/MMUL.2009.78
+
+Gauvin, M, Delgado, J., Rodriguez-Doncel, V., & Choi, M. (2009). Media Value Chain Ontology. Retrieved from https://dmag.ac.upc.edu/ontologies/mvco/
 
 Guha, R. V., Brickley, D., & Macbeth, S. (2016). Schema.org: Evolution of Structured Data on the Web. *Communications of the ACM*, *59*(2), 44–51. https://doi.org/10.1145/2844544
 
